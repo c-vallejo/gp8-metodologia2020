@@ -1,0 +1,21 @@
+
+Criterio de DONE  (pasar de InProgress a Done en el tablero)
+
+Requisitos:
+  
+  Código comentado : 
+    Con breve explicacion de lo que hace el codigo en esa porcion de codigo.
+  Código documentado: 
+    En el caso que sea necesario la documentacion externa leida de la cual se saco la Info para implementar la Issue. Expecificar 
+   enlaces o nombre del/los libros usados.
+  Rama correspondiente en GitHub :
+    Cada integrante tiene su rama en Git y su versionado sobre lo que implemento.
+  Comitteado :
+    Por cada commit hacer un detalle coherente del cambio en el Branch.
+  Revisado : 
+    Tiene que estar revisado y chequeado por al menos 3 integrantes del grupo.
+  Criterios de aceptacion:
+    Que cumpla con TODOS los criterios de aceptación definidos por esa Issue.
+    
+
+
