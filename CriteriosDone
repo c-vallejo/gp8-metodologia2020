@@ -8,6 +8,8 @@ Requisitos:
   Código documentado: 
     En el caso que sea necesario la documentacion externa leida de la cual se saco la Info para implementar la Issue. Expecificar 
    enlaces o nombre del/los libros usados.
+  Documentacion:
+    Documentar sobre un template el funcionamiento del componente realizado.
   Rama correspondiente en GitHub :
     Cada integrante tiene su rama en Git y su versionado sobre lo que implemento.
   Comitteado :
