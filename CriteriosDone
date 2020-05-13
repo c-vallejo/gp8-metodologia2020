@@ -6,18 +6,18 @@ Requisitos:
   Código comentado: 
     Cada funcion y metodo debera estar comentado explicando cual es su funcionalidad. 
   Código documentado: 
-    En el caso que sea necesario la documentacion externa leída en la cual nos basamos para determinar que decisiones tomar a la hora de
-    implementar una Issue. Expecificar enlaces o nombre del/los libros usados.
+    En el caso que sea necesario la documentacion externa leída en la cual nos basamos para determinar
+    que decisiones tomar a la hora de implementar una Issue. Expecificar enlaces o nombre del/los libros usados.
   Documentacion:
     Documentar sobre un template el funcionamiento de la tarea realizada.
  {{ Rama correspondiente en GitHub :
     Cada integrante tiene su rama en Git y su versionado sobre lo que implemento.  
-    }} Duda: Algunos integrantes del grupo consideran que no corresponde a Criterio de Done sino a organizacion de trabajo.
+  Duda: Algunos integrantes del grupo consideran que no corresponde a Criterio de Done sino a organizacion de trabajo.}}
   Comitteado:
     Por cada commit hacer un detalle coherente del cambio en el Branch.
   Revisado: 
-    Cada tarea debera ser estar revisada y comprobada su funcionamiento por al menos 3 integrantes del grupo antes de poder pasar los 
-    cambios del branch a la rama master.
+    Cada tarea debera ser estar revisada y comprobada su funcionamiento por al menos 3 integrantes del grupo 
+    antes de poder pasar los cambios del branch a la rama master.
   Criterios de aceptacion:
     Verificar que la User Story tenga todos los criterios de aceptacion que fueron definidos debidamente cumplidos.
     
