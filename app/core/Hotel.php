@@ -11,26 +11,16 @@ class Hotel extends Plan {
     
     public function __construct
         (
-            $nombre, 
-            $fecha_inicio, 
-            $fecha_fin, 
-            $destino, 
-            $descripcion,
-            $check_in_horario, 
-            $check_out_horario, 
-            $codigo_confirm,
-            $cant_noches,
-            $cant_habitaciones,
-            $cant_personas
+            $plan
         ) 
     {
-        parent::__construct($nombre, $fecha_inicio, $fecha_fin, $destino, $descripcion);
-        $this->check_in_horario = $check_in_horario;
-        $this->check_out_horario = $check_out_horario;
-        $this->codigo_confirm = $codigo_confirm;
-        $this->cant_noches = $cant_noches;
-        $this->cant_habitaciones = $cant_habitaciones;
-        $this->cant_personas = $cant_personas;
+        parent::__construct($plan);
+        $this->check_in_horario = $plan['check_in_horario'];
+        $this->check_out_horario = $plan['check_out_horario'];
+        $this->codigo_confirm = $plan['codigo_confirm'];
+        $this->cant_noches = $plan['cant_noches'];
+        $this->cant_habitaciones = $plan['cant_habitaciones'];
+        $this->cant_personas = $plan['cant_personas'];
     }
 
     public function getNombre() {

@@ -7,12 +7,12 @@ abstract class Plan {
     protected $destino;
     protected $descripcion;
     
-    public function __construct($nombre, $fecha_inicio, $fecha_fin, $destino, $descripcion) {
-        $this->nombre = $nombre;
-        $this->fecha_inicio = $fecha_inicio;
-        $this->fecha_fin = $fecha_fin;
-        $this->destino = $destino;
-        $this->descripcion = $descripcion;
+    public function __construct($plan) {
+        $this->nombre = $plan['nombre'];
+        $this->fecha_inicio = $plan['fecha_inicio'];
+        $this->fecha_fin = $plan['fecha_fin'];
+        $this->destino = $plan['destino'];
+        $this->descripcion = $plan['descripcion'];
     }
 
     public abstract function getNombre();

@@ -1,10 +1,11 @@
 <?php
+require_once 'Plan.php';
 
 class Viaje extends Plan{
     protected $planes;
 
-    public function __construct($nombre, $fecha_inicio, $fecha_fin, $destino, $descripcion) {
-        parent::__construct($nombre, $fecha_inicio, $fecha_fin, $destino, $descripcion);
+    public function __construct($plan) {
+        parent::__construct($plan->nombre, $plan->fecha_inicio, $plan->fecha_fin, $plan->destino, $plan->descripcion);
         $this->planes = array();
     }
 
