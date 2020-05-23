@@ -25,11 +25,55 @@ class Hotel extends Plan {
         ) 
     {
         parent::__construct($nombre, $fecha_inicio, $fecha_fin, $destino, $descripcion);
-        $this->nombre = $nombre;
-        $this->fecha_inicio = $fecha_inicio;
-        $this->fecha_fin = $fecha_fin;
-        $this->destino = $destino;
-        $this->descripcion = $descripcion;
+        $this->check_in_horario = $check_in_horario;
+        $this->check_out_horario = $check_out_horario;
+        $this->codigo_confirm = $codigo_confirm;
+        $this->cant_noches = $cant_noches;
+        $this->cant_habitaciones = $cant_habitaciones;
+        $this->cant_personas = $cant_personas;
     }
 
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    public function getFechaInicio() {
+        return $this->fecha_inicio;
+    }
+
+    public function getFechaFin() {
+        return $this->fecha_fin;
+    }
+
+    public function getDestino() {
+        return $this->destino;
+    }
+
+    public function getDescripcion() {
+        return $this->descripcion;
+    }
+
+    public function getCheckIn() {
+        return $this->check_in_horario;
+    }
+
+    public function getCheckOut() {
+        return $this->check_out_horario;
+    }
+
+    public function getCodigoConfirm() {
+        return $this->codigo_confirm;
+    }
+
+    public function getCantNoches() {
+        return $this->cant_noches;
+    }
+
+    public function getCantHabitaciones() {
+        return $this->cant_habitaciones;
+    }
+
+    public function getCantPersonas() {
+        return $this->cant_personas;
+    }
 }

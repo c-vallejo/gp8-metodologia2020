@@ -15,12 +15,14 @@ abstract class Plan {
         $this->descripcion = $descripcion;
     }
 
-    public function getNombre() {
-        return $this->nombre;
-    }
+    public abstract function getNombre();
 
-    public function getFechaInicio() {
-        return $this->fecha_inicio;
-    }
+    public abstract function getFechaInicio();
+
+    public abstract function getFechaFin();
+
+    public abstract function getDestino();
+
+    public abstract function getDescripcion();
 
 }
