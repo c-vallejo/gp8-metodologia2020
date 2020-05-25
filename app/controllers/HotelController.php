@@ -1,7 +1,7 @@
 <?php
 require_once 'Controller.php';
 require_once 'app\core\Hotel.php';
-// require_once 'app\models\HotelModel.php';
+require_once 'app\models\Model.php';
 require_once 'app\views\HotelView.php';
 
 //require_once 'ViajeController.php'; //TO-DO
@@ -11,7 +11,7 @@ class HotelController extends Controller{
 
     public function __construct() {
         parent::__construct();
-        // $this->model = new HotelModel();
+        $this->model = new Model();
         $this->view = new HotelView();
         //$this->viajeController = new ViajeController(); //TO-DO
     }
@@ -40,29 +40,27 @@ class HotelController extends Controller{
                 
                 {
                 //var_dump($_POST);die();
-                var_dump(isset($_POST['fecha_inicio']));die();
-                $hotel = new Hotel($_POST);
-                var_dump($hotel);die();
+                //var_dump(isset($_POST['fecha_inicio']));die();
+                $hotel = $_POST;
+                //var_dump($hotel);die();
 
                 //Verifica si existe un viaje en esa fecha
-                $viaje = $this->getViaje($hotel);
-                
-                if($viaje != null) {
-                    $viaje->addPlan($hotel);
-                } else {
-                    //$this->viajeController->create($viaje); //TO-DO
+                if(!$this->existeViaje($hotel)) {
+                    $this->model->createViaje($viaje);
                 }
-                //$this->model->create($hotel);
+                $this->model->createHotel($hotel);
             }
             header("Location: " . BASE_HOTEL);
         }
     }
 
-    private function getViaje($hotel) {
-        $viaje = $this->model->getViaje($hotel->getFechaInicio(), $hotel->getFechaFin()); // Se espera que el modelo devuelva información del viaje o null si no existe
+    private function existeViaje($hotel) {
+        $existeViaje = false;
+
+        $viaje = $this->model->getViaje($hotel['fecha_inicio']); // Se espera que el modelo devuelva información del viaje o null si no existe
         if($viaje =! null) {
-            $viaje = new Viaje($hotel);
+            $existeViaje = true;
         }
-        return $viaje;
+        return $existeViaje;
     }
 }
