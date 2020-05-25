@@ -18,11 +18,11 @@ class Model {
             $this->createViaje($hotel);
             $this->viaje->addPlan($plan);
         }
-        var_dump($this->viaje);die();
+        //var_dump($this->viaje);die();
         $log = new Log();
-        $log->record(implode(" - ", $hotel));
-        $log->record(implode(" - ", $this->viaje->getNombre()));
-        //var_dump(implode(" - ", $this->viaje->getNombre()));die();
+        $log->record($this->viaje->__toString());
+        $log->record($plan->__toString());
+        var_dump($this->viaje->__toString());die();
     }
 
     public function createViaje($viaje) {

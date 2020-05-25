@@ -63,4 +63,7 @@ class Viaje extends Plan{
         return $result;
     }
 
+    public function __toString() {
+        return "Viaje: " . $this->nombre . " Inicio: " . $this->fecha_inicio . " Fin: " . $this->fecha_fin;
+    }
 }

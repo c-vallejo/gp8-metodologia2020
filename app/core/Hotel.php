@@ -46,4 +46,10 @@ class Hotel extends Plan {
     public function getCantPersonas() {
         return $this->cant_personas;
     }
+
+    public function __toString() {
+        return "Hotel: " . $this->nombre . 
+            "Check-in: " . $this->fecha_inicio . " " . $this->check_in_horario .
+            "Check-out: " . $this->fecha_fin . " " . $this->check_out_horario;
+    }
 }

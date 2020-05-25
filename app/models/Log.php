@@ -9,8 +9,8 @@ class Log {
     }
 
     public function record($texto) {
-        $archivo = fopen('app/data/log.txt', 'r+');
-        fwrite($archivo, $texto);
+        $archivo = fopen('app/data/log.txt', 'a');
+        fwrite($archivo, $texto . PHP_EOL);
         fclose($archivo);
     }
 
