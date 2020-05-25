@@ -18,7 +18,9 @@ $router = new Router();
 $router->addRoute("hotel/:ID", "GET", "HotelController", "getCommentsbyCancion");
 $router->addRoute("hotel/:ID", "DELETE", "HotelController", "deleteComment");
 $router->addRoute("hotel", "POST", "HotelController", "create");
+$router->addRoute("hotel", "GET", "HotelController", "displayForm");
 $router->addRoute("hotel/:ID", "PUT", "HotelController", "updateComment");
+$router->addRoute(":", "GET", "HotelController", "displayForm");
 
 
 // rutea
