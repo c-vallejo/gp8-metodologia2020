@@ -2,7 +2,7 @@
 require_once 'Controller.php';
 require_once 'app\core\Hotel.php';
 // require_once 'app\models\HotelModel.php';
-// require_once 'app\views\HotelView.php';
+require_once 'app\views\HotelView.php';
 
 //require_once 'ViajeController.php'; //TO-DO
 
@@ -12,8 +12,12 @@ class HotelController extends Controller{
     public function __construct() {
         parent::__construct();
         // $this->model = new HotelModel();
-        // $this->view = new HotelView();
+        $this->view = new HotelView();
         //$this->viajeController = new ViajeController(); //TO-DO
+    }
+
+    public function displayForm() {
+        $this->view->displayForm();
     }
 
     public function create() {
@@ -34,8 +38,9 @@ class HotelController extends Controller{
                 isset($_POST['cant_personas'])
                 ) 
                 
-            {
+                {
                 //var_dump($_POST);die();
+                var_dump(isset($_POST['fecha_inicio']));die();
                 $hotel = new Hotel($_POST);
                 var_dump($hotel);die();
 
