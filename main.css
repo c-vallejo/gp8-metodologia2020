@@ -1,10 +1,73 @@
 @media only screen and (min-width: 300px) {
-  body {
+  #cuerpecito {
     background-color: rgb(101, 218, 169);
     font-size: 14px;
     font-style: italic;
   }
   h1 {
-    color: blueviolet;
+    color: white;
+    font-style: cursive;
+    font-size: 9px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 14px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+  }
+  #btn1 {
+    display: inline-flex;
+    height: 58px;
+    width: 70px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 3%;
+  }
+  .encabezado {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    background-color: rgb(101, 218, 169);
+  }
+  #titulo {
+    height: 68px;
+    border: 15px;
+    width: auto;
+    float: left;
+    margin: 15px 15px;
+    padding-top: 5px;
+  }
+  #usrImg {
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+  }
+  .usr {
+    display: inline-flex;
+    float: right;
+    margin: 2%;
+    border: 15px;
+  }
+  .listaReserva {
+    background-color: white;
+    width: 100%;
+    padding-top: 2%;
+    margin: 3% 0 3% 0;
+    border-top-left-radius: 3.5%;
+    border-top-right-radius: 3.5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border: solid 1.5px;
+  }
+  .hotel {
+    border-top-left-radius: 7%;
+    border-top-right-radius: 7%;
+    border-bottom-right-radius: 7%;
+    border-bottom-left-radius: 7%;
+    margin: 5% 5% 5% 5%;
+    padding: 2% 5% 0 5%;
+    border: solid 1px;
   }
 }
