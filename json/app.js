@@ -4,14 +4,14 @@ function load(){
     cargarTabla();
 }
 let objeto = {
-                "nombre" : "Hotel Nom",
+                "nombre" : "Hotel American",
                 "direccion" : "Direccion 1234",
                 "contacto" : "ejemplo@gmail.com",
                 "codigoConfirmacion": "1234",
-                "fechaInicio":"",
-                "checkin":"3/6/2020, 14.30hs",
-                "fechaFin":"",
-                "checkout":"7/6/2020, 17.00hs",
+                "fechaInicio":"3/6/2020",
+                "checkin":"10.30hs",
+                "fechaFin":"7/6/2020",
+                "checkout":"17.00hs",
                 "cantNoches":"4",
                 "cantHab":"1",
                 "cantPersonasAsociadas": "1",
@@ -32,16 +32,20 @@ function mostrarDatosTabla(container){
         let row6 = container.insertRow(5);
         let row7 = container.insertRow(6);
         let row8 = container.insertRow(7);
-        let row9 = container.insertRow(8);       
-        row1.innerHTML ="Nombre" + objeto.nombre;
-        row2.innerHTML = "Direccion:" + objeto.direccion;
-        row3.innerHTML = "Informacion de Contacto:" + objeto.contacto;
+        let row9 = container.insertRow(8);    
+        let row10 = container.insertRow(9);
+        let row11 = container.insertRow(10);   
+        row1.innerHTML ="Nombre: " + objeto.nombre;
+        row2.innerHTML = "Direccion: " + objeto.direccion;
+        row3.innerHTML = "Informacion de Contacto: " + objeto.contacto;
         row4.innerHTML = "Codigo de Confirmacion: " + objeto.codigoConfirmacion;
-        row5.innerHTML = "Horario de CheckIn: " + objeto.checkin;
-        row6.innerHTML = "Horario de CheckOut:" + objeto.checkout;
-        row7.innerHTML = "Cantidad de Noches: " + objeto.cantNoches;
-        row8.innerHTML = "Cantidad de Habitaciones: " + objeto.cantHab; 
-        row9.innerHTML ="Cantidad de Personas Asociadas a la Reserva: " + objeto.cantPersonasAsociadas;
+        row5.innerHTML = "Fecha de Entrada: " + objeto.fechaInicio;
+        row6.innerHTML = "Horario de CheckIn: " + objeto.checkin;
+        row7.innerHTML = "Fecha de Salida: " + objeto.fechaFin;
+        row8.innerHTML = "Horario de CheckOut:" + objeto.checkout;
+        row9.innerHTML = "Cantidad de Noches: " + objeto.cantNoches;
+        row10.innerHTML = "Cantidad de Habitaciones: " + objeto.cantHab; 
+        row11.innerHTML ="Cantidad de Personas Asociadas a la Reserva: " + objeto.cantPersonasAsociadas;
     
 }
 
