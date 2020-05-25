@@ -5,7 +5,7 @@ class Viaje extends Plan{
     protected $planes;
 
     public function __construct($plan) {
-        parent::__construct($plan->nombre, $plan->fecha_inicio, $plan->fecha_fin, $plan->destino, $plan->descripcion);
+        parent::__construct($plan);
         $this->planes = array();
     }
 
@@ -15,7 +15,7 @@ class Viaje extends Plan{
     public function addPlan($plan) {
         $added = false;
 
-        if(!existePlan($plan)) {
+        if(!$this->existePlan($plan)) {
             array_push($this->planes, $plan);
             $added = true;
         }
@@ -61,69 +61,6 @@ class Viaje extends Plan{
         }
 
         return $result;
-    }
-
-    /*
-    * Devuelve un arreglo de nombres (no devuelve string)
-    */
-    public function getNombre() {
-        $nombres = array();
-
-        array_push($nombres, $this->nombre); // el primer elemento del arreglo será el dato de viaje
-
-        foreach ($this->planes as $e) {
-            array_push($nombres, $e->getNombre());
-        }
-
-        return $nombres;
-    }
-
-    public function getFechaInicio() {
-        $inicios = array();
-
-        array_push($inicios, $this->fecha_inicio);
-
-        foreach ($this->planes as $e) {
-            array_push($inicios, $e->getFechaInicio());
-        }
-
-        return $inicios;
-    }
-
-    public function getFechaFin() {
-        $finales = array();
-
-        array_push($finales, $this->fecha_fin);
-
-        foreach ($this->planes as $e) {
-            array_push($finales, $e->getFechaFin());
-        }
-
-        return $finales;
-    }
-
-    public function getDestino() {
-        $destinos = array();
-
-        array_push($destinos, $this->destino);
-
-        foreach ($this->planes as $e) {
-            array_push($destinos, $e->getDestino());
-        }
-
-        return $destinos;
-    }
-
-    public function getDescripcion() {
-        $descripciones = array();
-
-        array_push($descripciones, $this->descripcion);
-
-        foreach ($this->planes as $e) {
-            array_push($descripciones, $e->getDescripcion());
-        }
-
-        return $descripciones;
     }
 
 }

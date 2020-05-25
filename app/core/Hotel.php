@@ -23,26 +23,6 @@ class Hotel extends Plan {
         $this->cant_personas = $plan['cant_personas'];
     }
 
-    public function getNombre() {
-        return $this->nombre;
-    }
-
-    public function getFechaInicio() {
-        return $this->fecha_inicio;
-    }
-
-    public function getFechaFin() {
-        return $this->fecha_fin;
-    }
-
-    public function getDestino() {
-        return $this->destino;
-    }
-
-    public function getDescripcion() {
-        return $this->descripcion;
-    }
-
     public function getCheckIn() {
         return $this->check_in_horario;
     }
