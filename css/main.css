@@ -8,3 +8,11 @@
 form{
     padding: 5%
 }
+
+#submitFormAltaReserva{ 
+    float: right;
+}
+
+.formButtons{
+    margin: 10% 5% 10% 5%;
+}
