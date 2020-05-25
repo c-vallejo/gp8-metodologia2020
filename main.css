@@ -75,4 +75,16 @@
     border: solid 0.45px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
+  .btns {
+    max-width: 100%;
+    margin: 5% 5% 5% 5%;
+    padding: 2% 5% 0 5%;
+  }
+  .btnAgregar {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-style: solid 1px;
+  }
+  #link {
+    float: right;
+  }
 }
