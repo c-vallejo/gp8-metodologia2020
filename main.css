@@ -86,5 +86,6 @@
   }
   #link {
     float: right;
+    position: relative;
   }
 }
