@@ -1,16 +1,23 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-05-24 15:21:16.203
+-- Last modification date: 2020-05-26 13:57:57.519
 
 -- tables
 -- Table: alojamientos
 CREATE TABLE unc_246364.alojamientos (
     id_viajes integer  NOT NULL,
     id_alojamiento integer  NOT NULL,
-    nombre character varying(40)  NULL,
-    ciudad character varying(40)  NULL,
+    nombre varchar(40)  NOT NULL,
+    ciudad varchar(40)  NOT NULL,
     fecha_inicio date  NULL,
     fecha_fin date  NULL,
-    descripcion character varying(120)  NULL,
+    descripcion varchar(120)  NULL,
+    contacto varchar(40)  NULL,
+    cod_confirmacion varchar(20)  NULL,
+    checkin varchar(20)  NULL,
+    checkout varchar(20)  NULL,
+    cant_noches int  NULL,
+    cant_habitacion int  NULL,
+    cant_pasajeros int  NULL,
     CONSTRAINT alojamientos_pkey PRIMARY KEY (id_viajes,id_alojamiento)
 );
 

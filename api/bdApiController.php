@@ -62,7 +62,7 @@ class FilmApiController {
     public function insertarAlojamientos($params = null) {
         $data = $this->getData();
 
-        $id = $this->model->insertarAlojamientos($data->nombre, $data->ciudad, $data->fecha_inicio, $data->fecha_fin,$data->descripcion);
+        $id = $this->model->insertarAlojamientos($data->nombre, $data->ciudad, $data->fecha_inicio, $data->fecha_fin,$data->descripcion, $data->contacto,$data->cod_confirmacion,$data->checkin,$data->checkout,$data->cant_noches,$data->cant_habitacion,$data->cant_pasajeros);
         
         $alojamiento = $this->model->get($id);
         if ($film)
