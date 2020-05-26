@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-05-26 13:57:57.519
+-- Last modification date: 2020-05-26 16:24:26.209
 
 -- tables
 -- Table: alojamientos
@@ -24,10 +24,12 @@ CREATE TABLE unc_246364.alojamientos (
 -- Table: viajes
 CREATE TABLE unc_246364.viajes (
     id_viajes integer  NOT NULL,
-    origen character varying(40)  NULL,
-    destino character varying(40)  NULL,
+    nombre varchar(20)  NOT NULL,
+    origen character varying(40)  NOT NULL,
+    destino character varying(40)  NOT NULL,
     fecha_inicio date  NULL,
     fecha_fin date  NULL,
+    descripcion varchar(180)  NULL,
     CONSTRAINT viajes_pkey PRIMARY KEY (id_viajes)
 );
 
