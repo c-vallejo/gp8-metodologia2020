@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>Agenda de viajes</title>
   </head>
   <body>
@@ -25,39 +30,33 @@
         <div class="hotel">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <a href="hotel/1"><h5>Hotel American</h5></a>
+              <a id="linkOff" href="hotel/1"><h5>Hotel American</h5></a>
             </li>
             <li class="list-group-item">Trivago</li>
           </ul>
         </div>
-        <div class="hotel">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h5>Hotel American</h5></li>
-            <li class="list-group-item">Trivago</li>
-          </ul>
-        </div>
-        <div class="hotel">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h5>Hotel</h5></li>
-            <li class="list-group-item">Trivago</li>
-          </ul>
-        </div>
-        <div class="hotel">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h5>Hotel</h5></li>
-            <li class="list-group-item">Trivago</li>
-          </ul>
-        </div>
+        <div class="listaReservas"></div>
         <div class="btns">
-          <button type="button" class="btnAgregar" class="btn btn-light" style="background-color: #65daa9;">
-            <a href="hotel">Agregar Hotel</a>
+          <button
+            type="button"
+            class="btnAgregar"
+            class="btn btn-light"
+            style="background-color: #65daa9;"
+          >
+            <a href="hotel">+Alojamiento</a>
           </button>
-          <div id="link">
-            <a href="info" class="stretched-link">Instrucciones carga por mail</a>
-          </div>
+          <button
+            type="button"
+            class="btnAgregar"
+            class="btn btn-light"
+            style="background-color: #65daa9;"
+          >
+            <a href="info">+info</a>
+          </button>
         </div>
       </div>
       <!--cierra el lista de reserva-->
     </div>
+    <script type="text/javascript" src="js/traerReserva.js"></script>
   </body>
 </html>
