@@ -1,29 +1,31 @@
 "use strict"
-document.addEventListener("DOMContentLoaded",load);
-function load(){
-    cargarTabla();
-}
-let objeto = {
-                "nombre" : "Hotel American",
-                "direccion" : "Direccion 1234",
-                "contacto" : "ejemplo@gmail.com",
-                "codigoConfirmacion": "1234",
-                "fechaInicio":"3/6/2020",
-                "checkin":"10.30hs",
-                "fechaFin":"7/6/2020",
-                "checkout":"17.00hs",
-                "cantNoches":"4",
-                "cantHab":"1",
-                "cantPersonasAsociadas": "1",
+document.addEventListener("DOMContentLoaded", getDataReserva());
+
+
+
+function getDataReserva(){
+    let objeto = {
+        "nombre" : "Hyatt",
+        "direccion" : "San Martin 321",
+        "contacto" : "Hyatt@gmail.com",
+        "codigoConfirmacion": "2234",
+        "fechaInicio": "22/05/20",
+        "checkin": "14:00",
+        "fechaFin": "03/06/20",
+        "checkout": "10:00",
+        "cantNoches": "12",
+        "cantHab": "3",
+        "cantPersonasAsociadas": "6"
+       }
+       mostrarDatos(objeto);
 }
 
-function cargarTabla(){
-    let container = document.querySelector(".datosReserva");
-    mostrarDatosTabla(container);
-}
 
-function mostrarDatosTabla(container){
-    container.innerHTML= "";
+function mostrarDatos(objeto){
+
+    let container = document.querySelector("#datosReserva");
+
+        container.innerHTML= "";
         let row1 = container.insertRow(0);
         let row2 = container.insertRow(1);
         let row3 = container.insertRow(2);
@@ -35,6 +37,7 @@ function mostrarDatosTabla(container){
         let row9 = container.insertRow(8);    
         let row10 = container.insertRow(9);
         let row11 = container.insertRow(10);   
+
         row1.innerHTML ="Nombre: " + objeto.nombre;
         row2.innerHTML = "Direccion: " + objeto.direccion;
         row3.innerHTML = "Informacion de Contacto: " + objeto.contacto;
@@ -46,7 +49,5 @@ function mostrarDatosTabla(container){
         row9.innerHTML = "Cantidad de Noches: " + objeto.cantNoches;
         row10.innerHTML = "Cantidad de Habitaciones: " + objeto.cantHab; 
         row11.innerHTML ="Cantidad de Personas Asociadas a la Reserva: " + objeto.cantPersonasAsociadas;
-    
 }
-
 
