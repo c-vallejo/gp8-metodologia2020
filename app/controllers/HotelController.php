@@ -50,10 +50,9 @@ class HotelController extends Controller{
                 
                 {
                 $hotel = $_POST;
-
                 //Verifica si existe un viaje en esa fecha
                 if(!$this->existeViaje($hotel)) {
-                    $this->model->createViaje($viaje);
+                    $this->model->createViaje($hotel);
                 }
                 $this->model->createHotel($hotel);
             }
@@ -65,7 +64,7 @@ class HotelController extends Controller{
         $existeViaje = false;
 
         $viaje = $this->model->getViaje($hotel['fecha_inicio']); // Se espera que el modelo devuelva información del viaje o null si no existe
-        if($viaje =! null) {
+        if($viaje != null) {
             $existeViaje = true;
         }
         return $existeViaje;

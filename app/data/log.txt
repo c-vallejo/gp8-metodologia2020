@@ -1,0 +1,4 @@
+Viaje:  Inicio:  Fin: 
+Hotel: Hotel HermitageCheck-in: 2020-05-29 20:00Check-out: 2020-05-31 10:00
+Viaje: Hotel Amike Inicio: 2020-05-27 Fin: 2020-05-30
+Hotel: Hotel AmikeCheck-in: 2020-05-27 00:58Check-out: 2020-05-30 22:00
