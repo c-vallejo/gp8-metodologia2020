@@ -1,0 +1,91 @@
+@media only screen and (min-width: 300px) {
+  #cuerpecito {
+    background-color: rgb(101, 218, 169);
+    font-size: 14px;
+    font-style: italic;
+  }
+  h1 {
+    color: white;
+    font-style: cursive;
+    font-size: 9px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 14px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+  }
+  #btn1 {
+    display: inline-flex;
+    max-width: 22.5%;
+    float: left;
+  }
+  #btnImg {
+    max-width: 100%;
+    max-height: 80%;
+    padding-top: 20%;
+  }
+  .encabezado {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    background-color: rgb(101, 218, 169);
+  }
+  #titulo {
+    max-width: 50%;
+    border: 15px;
+    width: auto;
+    float: left;
+    margin: 3% 3%;
+    padding-top: 3%;
+  }
+  #usrImg {
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+  }
+  .usr {
+    max-width: 22.5%;
+    display: inline-flex;
+    float: right;
+    margin-left: 5%;
+    border: 1.5%;
+    padding-top: 3%;
+  }
+  .listaReserva {
+    background-color: white;
+    width: 100%;
+    padding-top: 2%;
+    margin: 3% 0 3% 0;
+    border-top-left-radius: 3.5%;
+    border-top-right-radius: 3.5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border: solid 1.5px;
+  }
+  .hotel {
+    border-top-left-radius: 2.5%;
+    border-top-right-radius: 2.5%;
+    border-bottom-right-radius: 2.5%;
+    border-bottom-left-radius: 2.5%;
+    margin: 5% 5% 5% 5%;
+    padding: 2% 5% 0 5%;
+    border: solid 0.45px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  .btns {
+    max-width: 100%;
+    margin: 5% 5% 5% 5%;
+    padding: 2% 5% 0 5%;
+  }
+  .btnAgregar {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-style: solid 1px;
+  }
+  #link {
+    float: right;
+    position: relative;
+  }
+}
