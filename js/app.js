@@ -55,30 +55,28 @@ function mostrarDatos(objeto){
 /* Merge con dudas   NO SE CUAL DEJAR POR ESO LO COMENTO*/
 /*
 "use strict";
-document.addEventListener("DOMContentLoaded", load);
-function load() {
-  cargarTabla();
-}
-let objeto = {
-  nombre: "Hotel American",
-  direccion: "Direccion 1234",
-  contacto: "ejemplo@gmail.com",
-  codigoConfirmacion: "1234",
-  fechaInicio: "3/6/2020",
-  checkin: "10.30hs",
-  fechaFin: "7/6/2020",
-  checkout: "17.00hs",
-  cantNoches: "4",
-  cantHab: "1",
-  cantPersonasAsociadas: "1",
-};
+document.addEventListener("DOMContentLoaded", getDataReserva());
 
-function cargarTabla() {
-  let container = document.querySelector(".datosReserva");
-  mostrarDatosTabla(container);
+function getDataReserva() {
+  let objeto = {
+    nombre: "Hyatt",
+    direccion: "Bs As-San Martin 321",
+    contacto: "Hyatt@gmail.com",
+    codigoConfirmacion: "2234",
+    fechaInicio: "22/05/20",
+    checkin: "14:00",
+    fechaFin: "03/06/20",
+    checkout: "10:00",
+    cantNoches: "12",
+    cantHab: "3",
+    cantPersonasAsociadas: "6",
+  };
+  mostrarDatos(objeto);
 }
 
-function mostrarDatosTabla(container) {
+function mostrarDatos(objeto) {
+  let container = document.querySelector("#datosReserva");
+
   container.innerHTML = "";
   let row1 = container.insertRow(0);
   let row2 = container.insertRow(1);
@@ -91,6 +89,7 @@ function mostrarDatosTabla(container) {
   let row9 = container.insertRow(8);
   let row10 = container.insertRow(9);
   let row11 = container.insertRow(10);
+
   row1.innerHTML = "Nombre: " + objeto.nombre;
   row2.innerHTML = "Direccion: " + objeto.direccion;
   row3.innerHTML = "Informacion de Contacto: " + objeto.contacto;
@@ -106,14 +105,4 @@ function mostrarDatosTabla(container) {
     objeto.cantPersonasAsociadas;
 }
 
-function mostrarReservas() {
-  let hotel = document.querySelector("#hotel");
-  hotel.innerHTML = "";
-  for (let reserva of reservas) {
-    const myList = document.createElement("ul");
-    const listItem = document.createElement("li");
-    listItem.textContent = reserva.nombre;
-    myList.appendChild(listItem);
-  }
-}
 */

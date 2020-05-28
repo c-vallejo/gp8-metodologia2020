@@ -1,9 +1,25 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", load);
 function load() {
-  mostrarReservas();
+  traerReserva();
   let actualizar = document.querySelector("#btn1");
-  actualizar.addEventListener("click", traerHotel);
+  actualizar.addEventListener("click", cargarHotel);
+}
+
+let reservas;
+function traerReserva() {
+  fetch("api/alojamientos")
+    .then(function (r) {
+      return r.json();
+    })
+    .then(function (json) {
+      console.log(json);
+      reservas = json;
+      mostrarReservas();
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
 }
 
 function mostrarReservas() {
@@ -18,11 +34,11 @@ function mostrarReservas() {
     const listItem = document.createElement("li");
     const title = document.createElement("h5");
     listItem.className += "list-group-item";
-    title.textContent = reserva.datos.nombre;
+    title.textContent = reserva.nombre;
     listItem.appendChild(title);
     const listItem2 = document.createElement("li");
     listItem2.className += "list-group-item";
-    listItem2.textContent = reserva.datos.ciudad;
+    listItem2.textContent = reserva.fecha_inicio;
     newCont.appendChild(listItem);
     newCont.appendChild(listItem2);
     newDiv.appendChild(newCont);
@@ -30,59 +46,50 @@ function mostrarReservas() {
   }
 }
 
-let reservas = [
+
+
+
+function cargarHotel() {
+
+  let data = 
   {
-    id: "1",
-    datos: {
-      nombre: "Hotel Alto Pehuajo",
-      ciudad: "Pehuajo",
-    },
-  },
-  {
-    id: "2",
-    datos: {
-      nombre: "Hotel Mar Verde",
-      ciudad: "Mar Azul",
-    },
-  },
-];
-
-let hotelAdds = [
-  {id: "3",
-    datos: {
-            nombre: "Plaza",
-            ciudad: "Tandil",
-  }},
-  {id: "4",
-    datos: {
-            nombre: "Libertador",
-            ciudad: "Tandil",
-  }},
-  {id: "5",
-  datos: {
-          nombre: "Roma",
-          ciudad: "Tandil",
-  }},
-  { id: "6",
-    datos: {
-        nombre: "De la Sierra",
-        ciudad: "Tandil",
-  }},
-  { id: "7",
-    datos: {
-        nombre: "Mulen",
-        ciudad: "Tandil",
-  }},
-
-
-];
-
-
-function traerHotel() {
+    nombre:"Hotel Plaza",
+    ciudad: "Tandil",
+    fecha_inicio: "2021-07-24",
+    fecha_fin: "2021-07-25",
+    descripcion: " 5 estrellas ",
+    contacto: "info@hotelPlaza.com",
+    cod_confirmacion: "21312421",
+    checkin: "17:06",
+    checkout: "9:30",
+    cant_noches: "1",
+    cant_habitacion: "1",
+    cant_pasajeros: "2",
+  };
   
-  
+  let url = "api/insertar_alojamiento";
 
-  let random = Math.floor(Math.random() * hotelAdds.length)
+    //envia los datos a la API
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          console.log("error");
+        } else {
+          return response.json();   
+        }
+        
+      }).then(() => {
+        mostrarReservas();
+        })
+        .catch((error) => console.log(error));
+      
+    }
+
+ /* let random = Math.floor(Math.random() * hotelAdds.length)
   let hotel = hotelAdds[random];
   
   if (random == 0){
@@ -91,8 +98,8 @@ function traerHotel() {
   else{
       hotelAdds.splice(random,random);
   } 
+*/
 
-  reservas.push(hotel);
-  mostrarReservas();
+  
 
 }
