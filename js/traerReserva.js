@@ -7,21 +7,7 @@ function load() {
 }
 
 let reservas;
-function traerReserva() {
-  fetch("api/alojamientos")
-    .then(function (r) {
-      return r.json();
-    })
-    .then(function (json) {
-      console.log(json);
-      reservas = json;
-      mostrarReservas();
-    })
-    .catch(function (e) {
-      console.log(e);
-    });
-}
-let reservas;
+
 function traerReserva() {
   fetch("api/alojamientos")
     .then(function (r) {
@@ -97,14 +83,3 @@ function cargarHotel() {
     })
     .catch((error) => console.log(error));
 }
-
-/* let random = Math.floor(Math.random() * hotelAdds.length)
-  let hotel = hotelAdds[random];
-  
-  if (random == 0){
-    hotelAdds.shift();
-  }
-  else{
-      hotelAdds.splice(random,random);
-  } 
-*/
