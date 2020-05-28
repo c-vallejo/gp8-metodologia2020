@@ -59,13 +59,15 @@ class bdApiController {
 
     } */
 
-    public function insertarAlojamientos($params = null) {
+    public function insertarAlojamiento($params = null) {
         $data = $this->getData();
+
+        var_dump($data);
 
         $id = $this->model->insertarAlojamientos($data->nombre, $data->ciudad, $data->fecha_inicio, $data->fecha_fin,$data->descripcion, $data->contacto,$data->cod_confirmacion,$data->checkin,$data->checkout,$data->cant_noches,$data->cant_habitacion,$data->cant_pasajeros);
         
         $alojamiento = $this->model->get($id);
-        if ($film)
+        if ($alojamiento)
             $this->view->response($alojamiento, 200);
         else
             $this->view->response("El Alojamiento no fue creado", 500);
