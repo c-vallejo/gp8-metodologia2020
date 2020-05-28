@@ -1,5 +1,6 @@
 html {
   color: rgb(109, 107, 107);
+  font: "Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 .cont-nav {
@@ -11,6 +12,11 @@ html {
 }
 
 @media only screen and (min-width: 300px) {
+
+  html{
+    font: "Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+
   body {
     background-color: rgb(101, 218, 169);
     font-size: 14px;
