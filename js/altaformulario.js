@@ -45,7 +45,7 @@ function cargarAlojamiento(e) {
       cant_pasajeros: inputCantidadPersonas,
     };
     console.log(data);
-    let url = encodeURI("api/insertar_alojamiento");
+    let url = "api/insertar_alojamiento";
 
     //envia los datos a la API
     fetch(url, {
