@@ -52,4 +52,23 @@ function traerHotel() {
     nombre: "Hotel Plaza",
     ciudad: "Tandil",
   };
+
+  let newHotel = document.querySelector(".actualizarMail");
+  newHotel.innerHTML = " ";
+  let newDiv = document.createElement("div");
+  newDiv.className += "hotel";
+  let newCont = document.createElement("ul");
+  newCont.className += "list-group list-group-flush";
+  const listItem = document.createElement("li");
+  const title = document.createElement("h5");
+  listItem.className += "list-group-item";
+  title.textContent = hotel.nombre;
+  listItem.appendChild(title);
+  const listItem2 = document.createElement("li");
+  listItem2.className += "list-group-item";
+  listItem2.textContent = hotel.ciudad;
+  newCont.appendChild(listItem);
+  newCont.appendChild(listItem2);
+  newDiv.appendChild(newCont);
+  newHotel.appendChild(newDiv);
 }
