@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", getDataReserva());
 function getDataReserva() {
   let objeto = {
     nombre: "Hyatt",
-    direccion: "San Martin 321",
+    direccion: "Bs As-San Martin 321",
     contacto: "Hyatt@gmail.com",
     codigoConfirmacion: "2234",
     fechaInicio: "22/05/20",
