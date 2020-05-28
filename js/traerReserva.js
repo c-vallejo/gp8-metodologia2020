@@ -1,9 +1,24 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", load);
 function load() {
-  mostrarReservas();
+  traerReserva();
   let actualizar = document.querySelector("#btn1");
   actualizar.addEventListener("click", traerHotel);
+}
+let reservas;
+function traerReserva() {
+  fetch("api/alojamientos")
+    .then(function (r) {
+      return r.json();
+    })
+    .then(function (json) {
+      console.log(json);
+      reservas = json;
+      mostrarReservas();
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
 }
 
 function mostrarReservas() {
@@ -18,34 +33,17 @@ function mostrarReservas() {
     const listItem = document.createElement("li");
     const title = document.createElement("h5");
     listItem.className += "list-group-item";
-    title.textContent = reserva.datos.nombre;
+    title.textContent = reserva.nombre;
     listItem.appendChild(title);
     const listItem2 = document.createElement("li");
     listItem2.className += "list-group-item";
-    listItem2.textContent = reserva.datos.ciudad;
+    listItem2.textContent = reserva.fecha_inicio;
     newCont.appendChild(listItem);
     newCont.appendChild(listItem2);
     newDiv.appendChild(newCont);
     hotel.appendChild(newDiv);
   }
 }
-
-let reservas = [
-  {
-    id: "1",
-    datos: {
-      nombre: "Hotelito",
-      ciudad: "pehuajo",
-    },
-  },
-  {
-    id: "2",
-    datos: {
-      nombre: "Hotelito2",
-      ciudad: "pehuajo",
-    },
-  },
-];
 
 function traerHotel() {
   let hotel = {
