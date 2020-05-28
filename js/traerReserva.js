@@ -84,7 +84,13 @@ function traerHotel() {
 
   let random = Math.floor(Math.random() * hotelAdds.length)
   let hotel = hotelAdds[random];
-  hotelAdds.splice(random,random);
+  
+  if (random == 0){
+    hotelAdds.shift();
+  }
+  else{
+      hotelAdds.splice(random,random);
+  } 
 
   reservas.push(hotel);
   mostrarReservas();
