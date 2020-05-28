@@ -6,7 +6,7 @@ class bdModel extends PDO{
 
 
     function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=viajesApp;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=viajesapp;charset=utf8', 'root', '');
     }
 
     public function get($id) {
