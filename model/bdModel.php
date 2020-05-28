@@ -17,7 +17,7 @@ class bdModel extends PDO{
     }
 
 //funcion GET trae el viaje segun un ID
-    public function getViajes($id){
+    public function getViajesId($id){
             $sentencia = $this->db->prepare("SELECT * from viajes  WHERE id_viajes = ?");
             $sentencia->execute(array($id));
             $viajes = $sentencia->fetchAll(PDO::FETCH_OBJ);
@@ -31,7 +31,7 @@ class bdModel extends PDO{
             return $viajes;
     }
 //funcion GET trae un alojamiento segun su ID
-    public function getAlojamientos($id){
+    public function getAlojamientoId($id){
         $sentencia = $this->db->prepare("SELECT * from alojamientos  WHERE id_alojamientos = ?");
         $sentencia->execute(array($id));
         $alojamientos = $sentencia->fetchAll(PDO::FETCH_OBJ);
