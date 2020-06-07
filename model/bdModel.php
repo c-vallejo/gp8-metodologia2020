@@ -47,11 +47,11 @@ class bdModel extends PDO{
 
     
 //funcion POST inserta un viaje
-/*     public function insertarViajes($origen,$destino,$fecha_inicio,$fecha_fin){
+     public function insertarViajes($titulo,$destino,$fecha_inicio,$fecha_fin,$descripcion){
 
-        $sentencia = $this->db->prepare("INSERT INTO viajes (origen, destino, fecha_inicio, fecha_fin, ) VALUES(?,?,?,?)");
-        $sentencia->execute(array($origen,$destino,$fecha_inicio,$fecha_fin));
-    } */
+        $sentencia = $this->db->prepare("INSERT INTO viajes (titulo, destino, fecha_inicio, fecha_fin, descripcion ) VALUES(?,?,?,?,?)");
+        $sentencia->execute(array($titulo,$destino,$fecha_inicio,$fecha_fin,$descripcion));
+    }
 //funcion POST inserta un alojamiento
     public function insertarAlojamientos($nombre,$ciudad,$fecha_inicio,$fecha_fin,$descripcion,$contacto,$cod_confirmacion,$checkin,$checkout,$cant_noches,$cant_habitacion,$cant_pasajeros){
         var_dump(array($nombre,$ciudad,$fecha_inicio,$fecha_fin,$descripcion,$contacto,$cod_confirmacion,$checkin,$checkout,$cant_noches,$cant_habitacion,$cant_pasajeros));
