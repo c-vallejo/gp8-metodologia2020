@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2020 a las 18:51:33
+-- Tiempo de generación: 07-06-2020 a las 20:53:10
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -52,11 +52,12 @@ CREATE TABLE `alojamientos` (
 --
 
 CREATE TABLE `viajes` (
-  `id_viajes` int(11) NOT NULL,
+  `id_viaje` int(11) NOT NULL,
   `titulo` varchar(40) DEFAULT NULL,
   `destino` varchar(40) DEFAULT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_fin` date DEFAULT NULL,
+  `finalizado` tinyint(1) NOT NULL,
   `descripcion` varchar(120) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -75,7 +76,7 @@ ALTER TABLE `alojamientos`
 -- Indices de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  ADD PRIMARY KEY (`id_viajes`);
+  ADD PRIMARY KEY (`id_viaje`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -91,7 +92,7 @@ ALTER TABLE `alojamientos`
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  MODIFY `id_viajes` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_viaje` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -101,7 +102,7 @@ ALTER TABLE `viajes`
 -- Filtros para la tabla `alojamientos`
 --
 ALTER TABLE `alojamientos`
-  ADD CONSTRAINT `viaje` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`id_viajes`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `viaje` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`id_viaje`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
