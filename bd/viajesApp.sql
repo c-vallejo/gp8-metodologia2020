@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2020 a las 20:53:10
+-- Tiempo de generación: 09-06-2020 a las 16:22:57
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -53,11 +53,11 @@ CREATE TABLE `alojamientos` (
 
 CREATE TABLE `viajes` (
   `id_viaje` int(11) NOT NULL,
-  `titulo` varchar(40) DEFAULT NULL,
+  `titulo` varchar(40) NOT NULL,
   `destino` varchar(40) DEFAULT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_fin` date DEFAULT NULL,
-  `finalizado` tinyint(1) NOT NULL,
+  `finalizado` tinyint(1) NOT NULL DEFAULT '0',
   `descripcion` varchar(120) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -86,7 +86,7 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `alojamientos`
 --
 ALTER TABLE `alojamientos`
-  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `viajes`
