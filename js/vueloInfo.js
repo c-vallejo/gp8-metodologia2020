@@ -35,16 +35,16 @@ function mostrarDatosTabla(container){
         let row9 = container.insertRow(8);    
         let row10 = container.insertRow(9);
         let row11 = container.insertRow(10);   
-        row1.innerHTML ="Numero de Vuelo: " + objeto.numeroVuelo;
-        row2.innerHTML = "Compañia: " + objeto.compania;
-        row3.innerHTML = "Codigo de Reserva: " + objeto.codigoReserva;
-        row4.innerHTML = "Fecha de Salida: " + objeto.fechaSalida;
-        row5.innerHTML = "Horario de Salida: " + objeto.horarioSalida;
-        row6.innerHTML = "Aeropuerto de Salida: " + objeto.aeropuertoSalida;
-        row7.innerHTML = "Fecha de Llegada: " + objeto.fechaLlegada;
-        row8.innerHTML = "Horario de Llegada:" + objeto.horarioLlegada;
-        row9.innerHTML = "Aeropuerto de Llegada: " + objeto.aeropuertoLlegada;
-        row10.innerHTML = "Tiempo entre Escalas: " + objeto.tiempoEscalas; 
-        row11.innerHTML ="Informacion de la Aeronave: " + objeto.infoAeronave;
+        row1.innerHTML ="<b>Numero de Vuelo: </b>" + objeto.numeroVuelo + ".";
+        row2.innerHTML = "<b>Compañia: </b>" + objeto.compania + ".";
+        row3.innerHTML = "<b>Codigo de Reserva: </b>" + objeto.codigoReserva + ".";
+        row4.innerHTML = "<b>Fecha de Salida: </b>" + objeto.fechaSalida  + ".";
+        row5.innerHTML = "<b>Horario de Salida: </b>" + objeto.horarioSalida + ".";
+        row6.innerHTML = "<b>Aeropuerto de Salida: </b>" + objeto.aeropuertoSalida + ".";
+        row7.innerHTML = "<b>Fecha de Llegada: </b>" + objeto.fechaLlegada + ".";
+        row8.innerHTML = "<b>Horario de Llegada: </b>" + objeto.horarioLlegada + ".";
+        row9.innerHTML = "<b>Aeropuerto de Llegada: </b>" + objeto.aeropuertoLlegada + ".";
+        row10.innerHTML = "<b>Tiempo entre Escalas: </b>" + objeto.tiempoEscalas + "."; 
+        row11.innerHTML ="<b>Informacion de la Aeronave: </b>" + objeto.infoAeronave + ".";
     
 }
