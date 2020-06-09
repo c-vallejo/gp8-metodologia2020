@@ -178,17 +178,40 @@ form {
     color: black;
   }
 
-  .body-Detalle{
-    background-color: #9cde9f;
-  }
-
-  .jumbotron{
-    margin: 5%;
-  }
-  
-  .card{
-    margin: 5%;
-  }
-  
 }
 
+/* Detalle Viaje */
+
+.body-Detalle{
+  background-color: #9cde9f;
+}
+
+.jumbotron{
+  margin: 5%;
+}
+
+.card{
+  margin: 5%;
+}
+
+h1{ 
+  color: rgb(39, 32, 32); 
+}
+
+#container-title{
+  padding: 5%;
+  padding-top: 8%;
+}
+
+h4 {
+  padding: 5% 0% 0% 5%;
+}
+
+.buttons{
+  padding: 5%;
+}
+
+#anchor {
+  text-decoration: none;
+  color: black;
+}
