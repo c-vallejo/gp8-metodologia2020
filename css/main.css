@@ -178,6 +178,7 @@ form {
     color: black;
   }
 
+
 }
 
 /* Detalle Viaje */
@@ -215,3 +216,88 @@ h4 {
   text-decoration: none;
   color: black;
 }
+
+  html{
+    background-color:rgb(101, 218, 169);
+}
+
+.bodyVuelo{
+    margin: 1px;
+    background-color: rgb(101, 218, 169);
+}
+
+.fondoVuelo{
+    background-color: rgb(101, 218, 169);
+}
+
+.encabezadoVuelo{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(101, 218, 169);
+    align-items: center;
+}
+
+.botonBackV{
+    width: 20%;
+}
+
+.botonBackV a{
+    height: 100%;
+    width: 100%;
+}
+
+.nombreVuelo{
+    display: flex;
+    text-align: center;
+}
+    
+.nombreVuelo h1{
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.fa-arrow-left:before{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.fa-plane:before{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+i{
+    color: white;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.datos{
+    background-color: white;
+    border-top-left-radius: 3.5%;
+    border-top-right-radius: 3.5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border: solid 1.5px;
+}
+
+.tableDatos{
+    margin: 15px;
+}
+.datosVuelo tr{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  border: solid white 15px;
+}
+
+
+
+
+}
+
+
+
