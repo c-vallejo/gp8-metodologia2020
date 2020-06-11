@@ -46,11 +46,10 @@ class bdApiController {
     }
 
     
-     public function insertarViajes($params = null) {
+     public function insertarViaje($params = null) {
         $data = $this->getData();
 
-        $id = $this->model->insertarViajes($data->titulo, $data->destino, $data->fecha_inicio, $data->fecha_fin, $data->descripcion);
-        
+        $id = $this->model->insertarViaje($data->titulo, $data->destino, $data->fecha_inicio, $data->fecha_fin, $data->descripcion);
         $viajes = $this->model->get($id);
         if ($viajes)
             $this->view->response($viajes, 200);
@@ -63,7 +62,7 @@ class bdApiController {
 
         $id = $this->model->finalizarViaje($data->id_viaje, $data->finalizado);
         
-        $viajes = $this->model->getViajesId($id);
+        $viajes = $this->model->get($id);
         if ($viajes)
             $this->view->response($viajes, 200);
         else
@@ -72,10 +71,8 @@ class bdApiController {
 
     public function insertarAlojamiento($params = null) {
         $data = $this->getData();
-
-        var_dump($data);
-
-        $id = $this->model->insertarAlojamientos($data->nombre, $data->ciudad, $data->fecha_inicio, $data->fecha_fin,$data->descripcion, $data->contacto,$data->cod_confirmacion,$data->checkin,$data->checkout,$data->cant_noches,$data->cant_habitacion,$data->cant_pasajeros);
+        
+        $id = $this->model->insertarAlojamientos($data->id_viaje, $data->nombre, $data->ciudad, $data->fecha_inicio, $data->fecha_fin,$data->descripcion, $data->contacto,$data->cod_confirmacion,$data->checkin,$data->checkout,$data->cant_noches,$data->cant_habitacion,$data->cant_pasajeros);
         
         $alojamiento = $this->model->get($id);
         if ($alojamiento)
