@@ -149,14 +149,24 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Huella de carbono</label>
-                            <input class="form-control" type="text" placeholder="Notas del vuelo">
+                            <textarea class="form-control" placeholder="Notas acerca del vuelo"></textarea>
                         </div>
                         
-                        <div class="formButtons">
-                            <button id="volverAtras"  class="btn btn-dark"> <a href="./"> Volver </a> </button>
-                            <button type="submit" id="submitFormAltaVuelo"  class="btn btn-dark"> Agregar </button>
-                        </div>
+                        <div class="btn-group formButtons" role="group" aria-label="Button group with nested dropdown">
+                            <!-- <button type="button" id="volverAtras" class="btn btn-dark"> <a href="./"> Volver </a> </button> -->
+                            <button type="submit" id="submitFormAltaVuelo"  class="btn btn-dark"> Nuevo viaje </button>
+                          
+                            <div class="btn-group" role="group">
+                              <button type="button" id="submitFormAltaVuelo" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Viaje
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item" href="#">Viaje 1</a>
+                                <a class="dropdown-item" href="#">Viaje 2</a>
+                                <a class="dropdown-item" href="#">Viaje 3</a>
+                              </div>
+                            </div>
+                          </div>
                     </div>
                 </div>
               </form>
