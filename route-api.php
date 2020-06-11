@@ -15,8 +15,8 @@
 
     // rutas
 
-  //  $router->addRoute("viajes", "GET", "bdApiController", "getViajes");
- //   $router->addRoute("viajes/:ID", "GET", "bdApiController", "getViajesId");
+    $router->addRoute("viajes", "GET", "bdApiController", "getViajes");
+    $router->addRoute("viajes/:ID", "GET", "bdApiController", "getViajesId");
     $router->addRoute("alojamientos", "GET", "bdApiController", "getAlojamientos");
     $router->addRoute("alojamientos/:ID", "GET", "bdApiController", "getAlojamientosId");
   //  $router->addRoute("insertar_viaje", "POST", "bdApiController", "insertarViaje");
