@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2020 a las 16:22:57
+-- Tiempo de generación: 12-06-2020 a las 20:51:30
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -45,6 +45,14 @@ CREATE TABLE `alojamientos` (
   `cant_pasajeros` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `alojamientos`
+--
+
+INSERT INTO `alojamientos` (`id_alojamiento`, `id_viaje`, `nombre`, `ciudad`, `fecha_inicio`, `fecha_fin`, `descripcion`, `contacto`, `cod_confirmacion`, `checkin`, `checkout`, `cant_noches`, `cant_habitacion`, `cant_pasajeros`) VALUES
+(1, 1, 'Hotel Moreno', 'Mar del Plata', '2020-07-23', NULL, 'Contactar al hotel para confirmar las habitaciones', NULL, '7u5e64w54w64', 'jfhgcf', 'jkghvhjv', 2, 2, 2),
+(2, 1, 'Hotelito', 'Mar chiquita', '2020-07-23', NULL, 'hntxhxgfx', 'lll', 'ghtchc', 'ghfxcfxfg', NULL, 4, NULL, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +68,13 @@ CREATE TABLE `viajes` (
   `finalizado` tinyint(1) NOT NULL DEFAULT '0',
   `descripcion` varchar(120) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `viajes`
+--
+
+INSERT INTO `viajes` (`id_viaje`, `titulo`, `destino`, `fecha_inicio`, `fecha_fin`, `finalizado`, `descripcion`) VALUES
+(1, 'Viaje amigos', NULL, '2020-07-23', NULL, 1, 'testeando');
 
 --
 -- Índices para tablas volcadas
@@ -86,13 +101,13 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `alojamientos`
 --
 ALTER TABLE `alojamientos`
-  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  MODIFY `id_viaje` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_viaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
