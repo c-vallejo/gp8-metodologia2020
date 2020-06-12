@@ -19,18 +19,18 @@ class bdApiController {
         return json_decode($this->data);
     }
 
-/*     public function  getViajesId($params = null) {
+     public function  getViajesId($params = null) {
 
         $id = $params[':ID'];
         $viajes = $this->model->getViajesId($id);
         $this->view->response($viajes, 200);
-    } */
+    } 
 
-/*     public function  getViajes() {
+     public function  getViajes() {
 
         $viajes = $this->model->getViajes();
         $this->view->response($viajes, 200);
-    } */
+    } 
 
     public function  getAlojamientosId($params = null) {
 
@@ -46,7 +46,7 @@ class bdApiController {
     }
 
     
-/*     public function insertarViajes($params = null) {
+    public function insertarViajes($params = null) {
         $data = $this->getData();
 
         $id = $this->model->insertarViajes($data->origen, $data->destino, $data->fecha_inicio, $data->fecha_fin);
@@ -57,7 +57,7 @@ class bdApiController {
         else
             $this->view->response("El Viaje no fue creado", 500);
 
-    } */
+    } 
 
     public function insertarAlojamiento($params = null) {
         $data = $this->getData();
