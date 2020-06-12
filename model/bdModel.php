@@ -46,7 +46,6 @@ class bdModel extends PDO{
         $alojamientos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $alojamientos;
 }
-   
 //funcion POST inserta un viaje
      public function insertarViaje($titulo,$destino,$fecha_inicio,$fecha_fin,$descripcion){
 
@@ -63,5 +62,32 @@ class bdModel extends PDO{
 
         $sentencia = $this->db->prepare("INSERT INTO alojamientos (id_viaje,nombre,ciudad,fecha_inicio,fecha_fin,descripcion,contacto,cod_confirmacion,checkin,checkout,cant_noches,cant_habitacion,cant_pasajeros) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $sentencia->execute(array($id_viaje,$nombre,$ciudad,$fecha_inicio,$fecha_fin,$descripcion,$contacto,$cod_confirmacion,$checkin,$checkout,$cant_noches,$cant_habitacion,$cant_pasajeros));
-    }          
+    }
+    
+    public function getVuelos(){
+
+        $sentencia = $this->db->prepare("SELECT * from vuelo");
+        $sentencia->execute();
+        $vuelos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $vuelos;
+    }
+
+    public function getVueloId($id){
+
+        $sentencia = $this->db->prepare("SELECT * from vuelo  WHERE id_vuelo = ?");
+        $sentencia->execute(array($id));
+        $vuelo = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $vuelo;
+    }
+
+    public function insertarVuelo($id_viaje, $salida, $fecha_salida,$hora_salida,$llegada, $fecha_llegada,$hora_llegada, $duracion_vuelo,$cod_salida,$cod_llegada,$cod_reserva,$huella_carbono,$aerolinea,$cod_vuelo,$tipo_avion,$cant_pasajeros,$notas){
+        
+       $sentencia = $this->db->prepare("INSERT INTO vuelo (id_viaje, salida, fecha_salida,hora_salida,llegada,
+        fecha_llegada,hora_llegada, duracion_vuelo, cod_salida,cod_llegada,cod_reserva,huella_carbono,
+        aerolinea,cod_vuelo,tipo_avion,cant_pasajeros,notas) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+       
+       $sentencia->execute(array($id_viaje, $salida, $fecha_salida,$hora_salida,$llegada, $fecha_llegada,$hora_llegada, 
+        $duracion_vuelo,$cod_salida,$cod_llegada,$cod_reserva,$huella_carbono,$aerolinea,$cod_vuelo,$tipo_avion,$cant_pasajeros,$notas));
+    }
+
 }
