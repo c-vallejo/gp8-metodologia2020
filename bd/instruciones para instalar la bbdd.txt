@@ -1,0 +1,6 @@
+1) Inicializa xamp: apreta start en apache y en mysql
+2) entra a phpMyAdmin
+3)en el index de phpMyAdmin anda a la pestaña de importar (en el medio un poco a la derecha)
+4)Apreta en examinar, y busca el doc viajesapp.sql
+5)cuando se cargue el archivo anda hasta abajo del todo y apreta en continuar
+6)si todo salio ok, a la derecha te tiene que aparecer una nueva bases de datos que se llame viajesapp
