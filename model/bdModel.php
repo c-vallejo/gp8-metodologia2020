@@ -19,11 +19,11 @@ class bdModel extends PDO{
 //funcion GET trae el viaje segun un ID
      public function getViajesId($id){
          //cuando se agregue la tabla de vuelo agregar al join
-            $sentencia = $this->db->prepare('SELECT v.titulo, v.fecha_inicio, v.fecha_fin, v.finalizado, v.descripcion, h.id_alojamiento, h.nombre, h.ciudad, h.fecha_inicio "reserva", h.fecha_fin "fin reserva", h.checkin, h.descripcion "nota hotel" from viajes v INNER JOIN alojamientos h ON v.id_viaje = h.id_viaje WHERE v.id_viaje = ?');
-            $sentencia->execute([$id]);
-            $viaje = $sentencia->fetchAll(PDO::FETCH_OBJ);
-            
-            return $viaje;
+         $sentencia = $this->db->prepare('SELECT * FROM viajes WHERE id_viaje = ?');
+         $sentencia->execute([$id]);
+         $viaje = $sentencia->fetchAll(PDO::FETCH_OBJ);
+         
+         return $viaje;
     } 
 //funcion GET trae todos los viajes
      public function getViajes(){
