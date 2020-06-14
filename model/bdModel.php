@@ -3,8 +3,6 @@
 
 class bdModel extends PDO{
 
-
-
     function __construct(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=viajesapp;charset=utf8', 'root', '');
     }
@@ -18,8 +16,8 @@ class bdModel extends PDO{
 
 //funcion GET trae el viaje segun un ID
      public function getViajesId($id){
-         //cuando se agregue la tabla de vuelo agregar al join
-            $sentencia = $this->db->prepare('SELECT v.titulo, v.fecha_inicio, v.fecha_fin, v.finalizado, v.descripcion, h.id_alojamiento, h.nombre, h.ciudad, h.fecha_inicio "reserva", h.fecha_fin "fin reserva", h.checkin, h.descripcion "nota hotel" from viajes v INNER JOIN alojamientos h ON v.id_viaje = h.id_viaje WHERE v.id_viaje = ?');
+        //Para que funcione con los vuelos y alojamientos se tiene que hacer en llamados distintos
+            $sentencia = $this->db->prepare('SELECT * FROM viajes WHERE id_viaje = ?');
             $sentencia->execute([$id]);
             $viaje = $sentencia->fetchAll(PDO::FETCH_OBJ);
             
@@ -33,16 +31,17 @@ class bdModel extends PDO{
             return $viajes;
     }
 //funcion GET trae un alojamiento segun su ID
-    public function getAlojamientosId($id){
-        $sentencia = $this->db->prepare("SELECT * from alojamientos  WHERE id_alojamientos = ?");
-        $sentencia->execute(array($id));
+    public function getAlojamientoId($id){
+        $sentencia = $this->db->prepare("SELECT * from alojamientos  WHERE id_alojamiento = ?");
+        $sentencia->execute([$id]);
         $alojamientos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $alojamientos;
 }
-//funcion GET trae todos los alojamientos
-    public function getAlojamientos(){
-        $sentencia = $this->db->prepare("SELECT * from alojamientos");
-        $sentencia->execute();
+//funcion GET trae todos los alojamientos con el id de un viaje
+    public function getAlojamientos($id){
+       
+        $sentencia = $this->db->prepare("SELECT * from alojamientos WHERE id_viaje= ?");
+        $sentencia->execute([$id]);
         $alojamientos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $alojamientos;
 }
@@ -52,9 +51,12 @@ class bdModel extends PDO{
         $sentencia = $this->db->prepare("INSERT INTO viajes (titulo, destino, fecha_inicio, fecha_fin, descripcion ) VALUES(?,?,?,?,?)");
         $sentencia->execute(array($titulo,$destino,$fecha_inicio,$fecha_fin,$descripcion));
     }
-    public function finalizarViaje($id_viaje, $finalizado){
-        $sentencia = $this->db->prepare("UPDATE 'viajes' SET 'finalizado' = '?' WHERE 'viajes'.'id_viaje' = '?'");
-        $sentencia->execute(array($id_viaje,$finalizado));
+
+//Funcion UPDATE. Finaliza un viaje.
+    public function finalizarViaje($id_viaje){
+
+        $sentencia = $this->db->prepare("UPDATE 'viajes' SET 'finalizado' = 1 WHERE 'viajes'.'id_viaje' = '?'");
+        $sentencia->execute(array($id_viaje));
 
     }
 //funcion POST inserta un alojamiento
@@ -63,15 +65,15 @@ class bdModel extends PDO{
         $sentencia = $this->db->prepare("INSERT INTO alojamientos (id_viaje,nombre,ciudad,fecha_inicio,fecha_fin,descripcion,contacto,cod_confirmacion,checkin,checkout,cant_noches,cant_habitacion,cant_pasajeros) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $sentencia->execute(array($id_viaje,$nombre,$ciudad,$fecha_inicio,$fecha_fin,$descripcion,$contacto,$cod_confirmacion,$checkin,$checkout,$cant_noches,$cant_habitacion,$cant_pasajeros));
     }
-    
-    public function getVuelos(){
+//Funcion GET. Trae los vuelos con un id de viaje    
+    public function getVuelos($id){
 
-        $sentencia = $this->db->prepare("SELECT * from vuelo");
-        $sentencia->execute();
+        $sentencia = $this->db->prepare("SELECT * from vuelo WHERE id_viaje= ?");
+        $sentencia->execute([$id]);
         $vuelos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $vuelos;
     }
-
+//Funcion GET. trae los vuelos por una Id de vuelo
     public function getVueloId($id){
 
         $sentencia = $this->db->prepare("SELECT * from vuelo  WHERE id_vuelo = ?");
@@ -79,7 +81,7 @@ class bdModel extends PDO{
         $vuelo = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $vuelo;
     }
-
+//Funcion POST. carga datos de un vuelo en la base de datos
     public function insertarVuelo($id_viaje, $salida, $fecha_salida,$hora_salida,$llegada, $fecha_llegada,$hora_llegada, $duracion_vuelo,$cod_salida,$cod_llegada,$cod_reserva,$huella_carbono,$aerolinea,$cod_vuelo,$tipo_avion,$cant_pasajeros,$notas){
         
        $sentencia = $this->db->prepare("INSERT INTO vuelo (id_viaje, salida, fecha_salida,hora_salida,llegada,

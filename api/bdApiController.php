@@ -33,15 +33,16 @@ class bdApiController {
     }
 
     public function  getAlojamientosId($params = null) {
-
         $id = $params[':ID'];
+
         $alojamiento = $this->model->getAlojamientoId($id);
         $this->view->response($alojamiento, 200);
     }
 
-    public function  getAlojamientos() {
+    public function  getAlojamientos($params = null) {
 
-        $alojamiento = $this->model->getAlojamientos();
+        $id = $params[':ID'];
+        $alojamiento = $this->model->getAlojamientos($id);
         $this->view->response($alojamiento, 200);
     }
 
@@ -59,9 +60,9 @@ class bdApiController {
     }
 
     public function finalizarViaje($params = null){
-        $data = $this->getData();
 
-        $id = $this->model->finalizarViaje($data->id_viaje, $data->finalizado);
+        $id = $params[':ID'];
+        $this->model->finalizarViaje($id);
         
         $viajes = $this->model->get($id);
         if ($viajes)
@@ -84,9 +85,10 @@ class bdApiController {
             $this->view->response("El Alojamiento no fue creado", 500);
     }
 
-    public function  getVuelos() {
-
-        $vuelo = $this->model->getVuelos();
+    public function  getVuelos($params = null) {
+//agregar id viaje
+        $id = $params[':ID'];
+        $vuelo = $this->model->getVuelos($id);
         $this->view->response($vuelo, 200);
     }
 
