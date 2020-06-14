@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-06-2020 a las 20:51:30
+-- Tiempo de generación: 14-06-2020 a las 21:50:40
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -76,6 +76,40 @@ CREATE TABLE `viajes` (
 INSERT INTO `viajes` (`id_viaje`, `titulo`, `destino`, `fecha_inicio`, `fecha_fin`, `finalizado`, `descripcion`) VALUES
 (1, 'Viaje amigos', NULL, '2020-07-23', NULL, 1, 'testeando');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vuelo`
+--
+
+CREATE TABLE `vuelo` (
+  `id_viaje` int(11) NOT NULL,
+  `id_vuelo` int(11) NOT NULL,
+  `salida` varchar(20) NOT NULL,
+  `fecha_salida` date NOT NULL,
+  `hora_salida` time NOT NULL,
+  `llegada` varchar(20) NOT NULL,
+  `fecha_llegada` date NOT NULL,
+  `hora_llegada` time NOT NULL,
+  `duracion_vuelo` time DEFAULT NULL,
+  `cod_salida` varchar(20) NOT NULL,
+  `cod_llegada` varchar(20) NOT NULL,
+  `cod_reserva` varchar(20) NOT NULL,
+  `huella_carbono` varchar(30) DEFAULT NULL,
+  `aerolinea` varchar(35) NOT NULL,
+  `cod_vuelo` varchar(20) NOT NULL,
+  `tipo_avion` varchar(15) NOT NULL,
+  `cant_pasajeros` int(11) DEFAULT NULL,
+  `notas` varchar(120) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vuelo`
+--
+
+INSERT INTO `vuelo` (`id_viaje`, `id_vuelo`, `salida`, `fecha_salida`, `hora_salida`, `llegada`, `fecha_llegada`, `hora_llegada`, `duracion_vuelo`, `cod_salida`, `cod_llegada`, `cod_reserva`, `huella_carbono`, `aerolinea`, `cod_vuelo`, `tipo_avion`, `cant_pasajeros`, `notas`) VALUES
+(1, 1, '12', '2020-06-17', '02:00:00', 'wdf', '2020-06-18', '02:12:00', '12:00:00', '2323423', 'efcsdcsd', 'sdfwefwe', NULL, 'sdcsdcsdcac', 'ascacasccsdc', 'sas', NULL, NULL);
+
 --
 -- Índices para tablas volcadas
 --
@@ -94,6 +128,13 @@ ALTER TABLE `viajes`
   ADD PRIMARY KEY (`id_viaje`);
 
 --
+-- Indices de la tabla `vuelo`
+--
+ALTER TABLE `vuelo`
+  ADD PRIMARY KEY (`id_vuelo`),
+  ADD KEY `vuelo_viaje` (`id_viaje`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -101,13 +142,19 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `alojamientos`
 --
 ALTER TABLE `alojamientos`
-  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
   MODIFY `id_viaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `vuelo`
+--
+ALTER TABLE `vuelo`
+  MODIFY `id_vuelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -118,6 +165,12 @@ ALTER TABLE `viajes`
 --
 ALTER TABLE `alojamientos`
   ADD CONSTRAINT `viaje` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`id_viaje`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `vuelo`
+--
+ALTER TABLE `vuelo`
+  ADD CONSTRAINT `vuelo_viaje` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`id_viaje`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
