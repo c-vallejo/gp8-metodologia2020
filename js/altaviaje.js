@@ -27,8 +27,7 @@ function load() {
         ciudad: ciudad,
         fecha_inicio: fechaInicio,
         fecha_fin: fechaFinalizacion,
-        descripcion: InputDescripcion,
-        finalizado:0,
+        descripcion: InputDescripcion, 
         };
         console.log(data); 
         let url = "api/insertar_viaje";
