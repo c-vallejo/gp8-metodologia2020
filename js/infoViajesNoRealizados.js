@@ -15,7 +15,7 @@ let objetos = [{
 },
 {
     "nombreViaje": "España 2021",
-    "destino": "Vuelo",
+    "destino": "Vuelo"
 }
 ]
 
