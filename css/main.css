@@ -294,9 +294,29 @@ i{
   border: solid white 15px;
 }
 
+.list-group-flush{
+  border: solid 1px rgb(197, 197, 197);
+  margin: 10px;
+}
 
+.VNR{
+  background-color: rgb(101, 218, 169);
+}
 
+.encabezadoNR{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
+.tituloNR{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.filtro{
+  margin: 10px;
 }
 
 

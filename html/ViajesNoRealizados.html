@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes No Realizados</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="https://kit.fontawesome.com/22bea3a94b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body class="VNR">
+    <div id="contenedorVN">
+        <header class="encabezadoNR">
+            <div class="botonAct">
+                <a class="act" href=""><i class="fas fa-sync-alt"></i></i></a>
+            </div>
+            <div class="tituloNR">
+                <h1> Viajes </h1>
+            </div>
+            <div class="usr">
+                <img id="usrImg" src="../css/imagenes/dobby.jpg" alt="" />
+              </div>
+        </header>
+        <div class="filtro">
+            <select name="filtros">
+
+                <option value="">Viajes No Realizados</option>
+            
+                <option value="">Viajes Realizados</option>
+
+                <option value="">Viajes</option>
+
+              </select>
+        </div>
+        <div class="listaVueloNR">
+            <div class="vueloNR">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <a id="linkOff" href=""><h5>Japon 2020</h5></a>
+                </li>
+                <li class="list-group-item">Vuelo</li>
+              </ul>
+            </div>
+            <div class="listaVuelosNR">
+              <div class="actualizar"></div>
+            </div>
+        </div>
+    </div>
+        <div class="buttons"> 
+            <button  class="btn btn-light"> <a id= "anchor" href="./"> Volver </a> </button>
+            <button  class="btn btn-light"> <a id="anchor" href="./"> Agregar Viaje </a> </button> 
+        </div>
+      <script type="text/javascript" src="../js/infoViajesNoRealizados.js"></script>
+</body>
+</html>
