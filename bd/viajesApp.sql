@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2020 a las 16:22:57
+-- Tiempo de generación: 14-06-2020 a las 21:50:40
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -45,6 +45,14 @@ CREATE TABLE `alojamientos` (
   `cant_pasajeros` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `alojamientos`
+--
+
+INSERT INTO `alojamientos` (`id_alojamiento`, `id_viaje`, `nombre`, `ciudad`, `fecha_inicio`, `fecha_fin`, `descripcion`, `contacto`, `cod_confirmacion`, `checkin`, `checkout`, `cant_noches`, `cant_habitacion`, `cant_pasajeros`) VALUES
+(1, 1, 'Hotel Moreno', 'Mar del Plata', '2020-07-23', NULL, 'Contactar al hotel para confirmar las habitaciones', NULL, '7u5e64w54w64', 'jfhgcf', 'jkghvhjv', 2, 2, 2),
+(2, 1, 'Hotelito', 'Mar chiquita', '2020-07-23', NULL, 'hntxhxgfx', 'lll', 'ghtchc', 'ghfxcfxfg', NULL, 4, NULL, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +68,47 @@ CREATE TABLE `viajes` (
   `finalizado` tinyint(1) NOT NULL DEFAULT '0',
   `descripcion` varchar(120) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `viajes`
+--
+
+INSERT INTO `viajes` (`id_viaje`, `titulo`, `destino`, `fecha_inicio`, `fecha_fin`, `finalizado`, `descripcion`) VALUES
+(1, 'Viaje amigos', NULL, '2020-07-23', NULL, 1, 'testeando');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vuelo`
+--
+
+CREATE TABLE `vuelo` (
+  `id_viaje` int(11) NOT NULL,
+  `id_vuelo` int(11) NOT NULL,
+  `salida` varchar(20) NOT NULL,
+  `fecha_salida` date NOT NULL,
+  `hora_salida` time NOT NULL,
+  `llegada` varchar(20) NOT NULL,
+  `fecha_llegada` date NOT NULL,
+  `hora_llegada` time NOT NULL,
+  `duracion_vuelo` time DEFAULT NULL,
+  `cod_salida` varchar(20) NOT NULL,
+  `cod_llegada` varchar(20) NOT NULL,
+  `cod_reserva` varchar(20) NOT NULL,
+  `huella_carbono` varchar(30) DEFAULT NULL,
+  `aerolinea` varchar(35) NOT NULL,
+  `cod_vuelo` varchar(20) NOT NULL,
+  `tipo_avion` varchar(15) NOT NULL,
+  `cant_pasajeros` int(11) DEFAULT NULL,
+  `notas` varchar(120) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vuelo`
+--
+
+INSERT INTO `vuelo` (`id_viaje`, `id_vuelo`, `salida`, `fecha_salida`, `hora_salida`, `llegada`, `fecha_llegada`, `hora_llegada`, `duracion_vuelo`, `cod_salida`, `cod_llegada`, `cod_reserva`, `huella_carbono`, `aerolinea`, `cod_vuelo`, `tipo_avion`, `cant_pasajeros`, `notas`) VALUES
+(1, 1, '12', '2020-06-17', '02:00:00', 'wdf', '2020-06-18', '02:12:00', '12:00:00', '2323423', 'efcsdcsd', 'sdfwefwe', NULL, 'sdcsdcsdcac', 'ascacasccsdc', 'sas', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -79,6 +128,13 @@ ALTER TABLE `viajes`
   ADD PRIMARY KEY (`id_viaje`);
 
 --
+-- Indices de la tabla `vuelo`
+--
+ALTER TABLE `vuelo`
+  ADD PRIMARY KEY (`id_vuelo`),
+  ADD KEY `vuelo_viaje` (`id_viaje`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -86,13 +142,19 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `alojamientos`
 --
 ALTER TABLE `alojamientos`
-  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  MODIFY `id_viaje` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_viaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `vuelo`
+--
+ALTER TABLE `vuelo`
+  MODIFY `id_vuelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -103,6 +165,12 @@ ALTER TABLE `viajes`
 --
 ALTER TABLE `alojamientos`
   ADD CONSTRAINT `viaje` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`id_viaje`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `vuelo`
+--
+ALTER TABLE `vuelo`
+  ADD CONSTRAINT `vuelo_viaje` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`id_viaje`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
