@@ -5,6 +5,7 @@ function cargarAlojamiento(e) {
   e.preventDefault();
 
   //toma los datos de los campos del formulario
+  let id_viaje = 1;
   let nombre = document.querySelector("#inputNombreReserva").value;
   let ciudad = document.querySelector("#inputCiudadDestino").value;
   let fechaInicio = document.querySelector("#fechaInicio").value;
@@ -31,6 +32,7 @@ function cargarAlojamiento(e) {
   ) {
     //carga los datos para ser enviads via API
     let data = {
+      id_viaje: id_viaje,
       nombre: nombre,
       ciudad: ciudad,
       fecha_inicio: fechaInicio,
@@ -44,7 +46,7 @@ function cargarAlojamiento(e) {
       cant_habitacion: inputCantidadHab,
       cant_pasajeros: inputCantidadPersonas,
     };
-    console.log(data); 
+    console.log(data);
     let url = "api/insertar_alojamiento";
 
     //envia los datos a la API
