@@ -25,7 +25,7 @@ class bdApiController {
         $viajes = $this->model->getViajesId($id);
         $this->view->response($viajes, 200);
     }
-
+    //Conecta con el model y trae los viejas de la bd
     public function  getViajes() {
 
         $viajes = $this->model->getViajes();
