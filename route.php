@@ -17,6 +17,7 @@ $router = new Router();
 
 // arma la tabla de ruteo
 $router->addRoute(":", "GET", "ViajesController", "displayViajes");
+$router->addRoute("agregarViaje", "POST", "ViajesController", "displayCargarViajes");
 $router->addRoute("info", "GET", "HotelController", "displayInfo");
 $router->addRoute("hotel", "POST", "HotelController", "create");
 $router->addRoute("hotel", "GET", "HotelController", "displayForm");

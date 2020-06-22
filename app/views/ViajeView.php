@@ -2,11 +2,13 @@
 
 class ViajeView {
     private $viajes;
+    private $formularioCargar;
 
     public function __construct() {
 
         // template viajes
         $this->viajes = 'html/Viajes.html';
+        $this->formularioCargar = 'html/cargarViaje.html' ;
     }
 
     public function mostrarTemplate($template) {
@@ -22,4 +24,8 @@ class ViajeView {
         $this->mostrarTemplate($this->viajes);
     }
 
+    public function displayCargarViajes() {
+        $this->mostrarTemplate($this->formularioCargar);
+    }
+    
 }
