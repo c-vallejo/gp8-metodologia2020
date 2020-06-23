@@ -8,7 +8,7 @@ class ViajeView {
 
         // template viajes
         $this->viajes = 'html/Viajes.html';
-        $this->formularioCargar = 'html/cargarViaje.html' ;
+        $this->formularioCargar = 'html/cargarViaje.html';
     }
 
     public function mostrarTemplate($template) {
