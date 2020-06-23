@@ -15,8 +15,8 @@ $method = $_SERVER["REQUEST_METHOD"];
 $router = new Router();
 
 // arma la tabla de ruteo
-$router->addRoute(":", "GET", "ViajesController", "displayViajes");
-$router->addRoute("agregar_viaje", "GET", "ViajesController", "displayCargarViajes");
+$router->addRoute("viajes", "GET", "ViajesController", "displayViajes");
+$router->addRoute(":", "GET", "ViajesController", "displayCargarViajes");
 //$router->addRoute("agregarViaje", "POST", "ViajesController", "displayCargarViajes");
 $router->addRoute("info", "GET", "HotelController", "displayInfo");
 $router->addRoute("hotel", "POST", "HotelController", "create");
