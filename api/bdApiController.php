@@ -25,7 +25,7 @@ class bdApiController {
         $viajes = $this->model->getViajesId($id);
         $this->view->response($viajes, 200);
     }
-
+    //Conecta con el model y trae los viejas de la bd
     public function  getViajes() {
 
         $viajes = $this->model->getViajes();
@@ -49,10 +49,11 @@ class bdApiController {
     
      public function insertarViaje($params = null) {
         $data = $this->getData();
-
+        
         $id = $this->model->insertarViaje($data->titulo, $data->destino, $data->fecha_inicio,
         $data->fecha_fin, $data->descripcion);
         $viajes = $this->model->get($id);
+        var_dump($viajes); die;
         if ($viajes)
             $this->view->response($viajes, 200);
         else
