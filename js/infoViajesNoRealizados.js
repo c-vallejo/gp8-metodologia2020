@@ -1,7 +1,7 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", load);
 function load() {
-  mostrarDatosViajeNR();
+  traerReserva();
   let actualizar = document.querySelector(".act");
   actualizar.addEventListener("click", mostrarDatosViajeNR());
 }
