@@ -53,7 +53,7 @@ class bdApiController {
         $id = $this->model->insertarViaje($data->titulo, $data->destino, $data->fecha_inicio,
         $data->fecha_fin, $data->descripcion);
         $viajes = $this->model->get($id);
-        var_dump($viajes); die;
+    
         if ($viajes)
             $this->view->response($viajes, 200);
         else
