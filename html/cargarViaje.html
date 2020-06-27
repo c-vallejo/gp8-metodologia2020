@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Agregar </title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body> 
+        <div>
+            <p id="tituloForm" class="lead">Agregar Viaje </p>
+        </div>
+        <div>
+        <form id="form_alta">
+            <div class="container-sm"> 
+
+                <div class="form-group">
+                    <label for="inputNombreReserva"> Nombre del Viaje</label> 
+                    <input type="text" class="form-control" name="nombre" id="inputNombreReserva">
+                </div>  
+
+                <div class="form-group"> 
+                    <label for="inputCiudadDestino"> Ciudad de destino </label>
+                    <input type="text" class="form-control" name="destino" id="inputCiudadDestino" >
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaInicio"> Fecha de inicio: </label>
+                    <input type="date" class="form-control" name="fecha_inicio" id="fechaInicio">
+                </div>
+
+               
+                <div class="form-group">
+                    <label for="fechaFinalizacion"> Fecha de finalizacion </label>
+                    <input type="date" class="form-control" name="fecha_fin" id="fechaFinalizacion">
+                </div>
+
+                
+                
+                <div class="form-group">
+                    <label for="inputDescripcion">Descripcion:</label>
+                    <input type="text" class="form-control" name="descripcion" id="InputDescripcion">
+                </div>
+                <div class="formButtons">
+                <button id="volverAtras"  class="btn btn-dark"> <a href="./"> Volver </a> </button>
+                <button type="submit" id="submitFormAltaViaje"  class="btn btn-dark"> Agregar </button>
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Validacion formulario -->
+    <script src="js/altaviaje.js"></script>
+    </body>
+</html>
+
+ <!-- Verificar que los datos ingresados por el usuario tenga los campos mínimos. 
+
+Cada viaje estará identificado por un nombre, ciudad de destino, fechas de inicio y fin y una descripción. ← (campos minimos)
+
+Verificar que luego de cargarlo aparezca en la lista de viajes futuros*/  -->
