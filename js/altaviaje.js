@@ -34,10 +34,11 @@ function load() {
         alert("Por favor complete los campos obligatorios");
       }
   }
+
   function cargarViaje(data) {
     
       let url = "api/viajes";
-
+      console.log(data);
       //envia los datos a la API
       fetch(url, {
         method: "POST",
