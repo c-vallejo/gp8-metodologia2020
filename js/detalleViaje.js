@@ -106,8 +106,9 @@ function mostrarDetallesHotel(obj) {
     btn1.innerHTML = "Mostar Detalle";
     btn1.className += "btn btn-light";
     btn1.addEventListener("click", (event) => {
+      let url = "./hotel/" + elem.id_alojamiento;
       localStorage.setItem("idH", elem.id_alojamiento);
-      location.replace("./hotel");
+      location.replace(url);
     });
 
     newDiv.appendChild(nombre);
