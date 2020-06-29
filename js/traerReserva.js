@@ -1,6 +1,12 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", load);
 function load() {
+  let id;
+  if (localStorage.getItem("idH")) {
+    id = localStorage.getItem("idH");
+  } else {
+    console.log("no guardo los datos");
+  }
   traerReserva();
   let actualizar = document.querySelector("#btn1");
   actualizar.addEventListener("click", cargarHotel);

@@ -1,6 +1,7 @@
 html {
   color: rgb(109, 107, 107);
-  font: "Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .cont-nav {
@@ -12,9 +13,10 @@ html {
 }
 
 @media only screen and (min-width: 300px) {
-
-  html{
-    font: "Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  html {
+    font: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
   }
 
   body {
@@ -177,38 +179,40 @@ form {
     text-decoration: none;
     color: black;
   }
-
-
 }
 
 /* Detalle Viaje */
 
-.body-Detalle{
-  background-color:#65daa9;
+.body-Detalle {
+  background-color: #65daa9;
 }
 
-.jumbotron{
+.jumbotron {
   margin: 5%;
 }
 
-.card{
+.card {
   margin: 5%;
 }
 
-h1{ 
-  color: white; 
+h1 {
+  color: white;
 }
 
-#container-title{
+#container-title {
+  height: 15%;
+  width: 100%;
+  display: flex;
   padding: 5%;
   padding-top: 8%;
+  text-align: left;
 }
 
 h4 {
   padding: 5% 0% 0% 5%;
 }
 
-.buttons{
+.buttons {
   padding: 5%;
 }
 
@@ -217,107 +221,104 @@ h4 {
   color: black;
 }
 
-  html{
-    background-color:rgb(101, 218, 169);
+html {
+  background-color: rgb(101, 218, 169);
 }
 
-.bodyVuelo{
-    margin: 1px;
-    background-color: rgb(101, 218, 169);
+.bodyVuelo {
+  margin: 1px;
+  background-color: rgb(101, 218, 169);
 }
 
-.fondoVuelo{
-    background-color: rgb(101, 218, 169);
+.fondoVuelo {
+  background-color: rgb(101, 218, 169);
 }
 
-.encabezadoVuelo{
-    height: 70px;
-    width: 100%;
-    display: flex;
-    background-color: rgb(101, 218, 169);
-    align-items: center;
+.encabezadoVuelo {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  background-color: rgb(101, 218, 169);
+  align-items: center;
 }
 
-.botonBackV{
-    width: 20%;
+.botonBackV {
+  width: 20%;
 }
 
-.botonBackV a{
-    height: 100%;
-    width: 100%;
+.botonBackV a {
+  height: 100%;
+  width: 100%;
 }
 
-.nombreVuelo{
-    display: flex;
-    text-align: center;
-}
-    
-.nombreVuelo h1{
-    color: white;
-    font-style: italic;
-    font-weight: bold;
+.nombreVuelo {
+  display: flex;
+  text-align: center;
 }
 
-.fa-arrow-left:before{
-    position: absolute;
-    left: 10px;
-    top: 10px;
+.nombreVuelo h1 {
+  color: white;
+  font-style: italic;
+  font-weight: bold;
 }
 
-.fa-plane:before{
-    position: absolute;
-    right: 20px;
-    top: 10px;
+.fa-arrow-left:before {
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
-i{
-    color: white;
-    font-size: 50px;
-    margin: 10px;
+.fa-plane:before {
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
 
-.datos{
-    background-color: white;
-    border-top-left-radius: 3.5%;
-    border-top-right-radius: 3.5%;
-    border-bottom-right-radius: 5%;
-    border-bottom-left-radius: 5%;
-    border: solid 1.5px;
+i {
+  color: white;
+  font-size: 50px;
+  margin: 10px;
 }
 
-.tableDatos{
-    margin: 15px;
+.datos {
+  background-color: white;
+  border-top-left-radius: 3.5%;
+  border-top-right-radius: 3.5%;
+  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  border: solid 1.5px;
 }
-.datosVuelo tr{
+
+.tableDatos {
+  margin: 15px;
+}
+.datosVuelo tr {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   border: solid white 15px;
 }
 
-.list-group-flush{
+.list-group-flush {
   border: solid 1px rgb(197, 197, 197);
   margin: 10px;
 }
 
-.VNR{
+.VNR {
   background-color: rgb(101, 218, 169);
 }
 
-.encabezadoNR{
+.encabezadoNR {
   height: 120px;
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.tituloNR{
+.tituloNR {
   margin-left: 40px;
   margin-right: 40px;
 }
 
-.filtro{
+.filtro {
   margin: 10px;
 }
-
-
-

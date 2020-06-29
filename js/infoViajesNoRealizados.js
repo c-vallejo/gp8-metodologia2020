@@ -1,10 +1,11 @@
-"use strict";
+("use strict");
 document.addEventListener("DOMContentLoaded", load);
 function load() {
   traerReserva();
   let actualizar = document.querySelector(".act");
   actualizar.addEventListener("click", mostrarDatosViajeNR());
 }
+
 let objetos = [];
 
 function traerReserva() {
@@ -68,18 +69,32 @@ function mostrarDatosViajeNR() {
   for (let objeto of objetos) {
     let newDiv = document.createElement("div");
     newDiv.className += "vueloNR";
+
     let newCont = document.createElement("ul");
     newCont.className += "list-group list-group-flush";
+
     const listItem = document.createElement("li");
     const title = document.createElement("h5");
+
     listItem.className += "list-group-item";
-    title.textContent = objeto.nombreViaje;
+    title.textContent = objeto.titulo;
     listItem.appendChild(title);
+
     const listItem2 = document.createElement("li");
     listItem2.className += "list-group-item";
     listItem2.textContent = objeto.destino;
+
+    let btn1 = document.createElement("button");
+    btn1.innerHTML = "Mostar Detalle";
+    btn1.className += "btn btn-light";
+    btn1.addEventListener("click", (event) => {
+      let url = "./detalleViaje" + objeto.id_viaje;
+      localStorage.setItem("id", objeto.id_viaje);
+      location.replace("./detalleViaje");
+    });
     newCont.appendChild(listItem);
     newCont.appendChild(listItem2);
+    newCont.appendChild(btn1);
     newDiv.appendChild(newCont);
     vuelo.appendChild(newDiv);
   }

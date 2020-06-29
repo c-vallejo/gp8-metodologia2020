@@ -15,4 +15,10 @@ class ViajesController extends Controller{
     public function displayCargarViajes() {
         $this->view->displayCargarViajes();
     }
+    public function displayDetalleViaje() {
+        $this->view->displayDetalleViaje();
+    }
+    public function detalleVuelo() {
+        $this->view->detalleVuelo();
+    }
 }
