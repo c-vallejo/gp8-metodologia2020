@@ -1,13 +1,13 @@
 "use strict"
 document.addEventListener("DOMContentLoaded",load);
 function load(){
-    mostrarDatosViajeNR();
+    traerViajes();
     let actualizar = document.querySelector(".act");
-    actualizar.addEventListener("click", mostrarDatosViajeNR());
+    actualizar.addEventListener("click", () => {  mostrarDatosViajeNR(objetos);});
 }
 let objetos = []
 
-function traerReserva() {
+function traerViajes() {
     fetch("api/viajes")
       .then(function (r) {
         return r.json();
@@ -15,7 +15,7 @@ function traerReserva() {
       .then(function (json) {
         console.log(json);
         objetos = json;
-        mostrarDatosViajeNR();
+        mostrarDatosViajeNR(objetos);
       })
       .catch(function (e) {
         console.log(e);
@@ -63,12 +63,11 @@ function traerReserva() {
   }
 
 
-
-function mostrarDatosViajeNR(){
-    console.log(objetos);
+function mostrarDatosViajeNR(obj){
+    console.log(obj);
     let vuelo = document.querySelector(".listaVuelosNR");
     vuelo.innerHTML = " ";
-    for (let objeto of objetos) {
+    for (let objeto of obj) {
         let newDiv = document.createElement("div");
         newDiv.className += "vueloNR";
         let newCont = document.createElement("ul");
@@ -76,7 +75,7 @@ function mostrarDatosViajeNR(){
         const listItem = document.createElement("li");
         const title = document.createElement("h5");
         listItem.className += "list-group-item";
-        title.textContent = objeto.nombreViaje;
+        title.textContent = objeto.titulo;
         listItem.appendChild(title);
         const listItem2 = document.createElement("li");
         listItem2.className += "list-group-item";
@@ -87,4 +86,6 @@ function mostrarDatosViajeNR(){
         vuelo.appendChild(newDiv);
     }
 }
+    
+
     

@@ -11,8 +11,8 @@
 <body class="VNR">
     <div id="contenedorVN">
         <header class="encabezadoNR">
-            <div class="botonAct">
-                <a class="act" href=""><i class="fas fa-sync-alt"></i></i></a>
+            <div class="botonAct" >
+                <a class="act"  id="botonActualizar" href="./viajes"><i class="fas fa-sync-alt"></i></i></a>
             </div>
             <div class="tituloNR">
                 <h1> Viajes </h1>
@@ -22,12 +22,12 @@
               </div>
         </header>
         <div class="filtro">
-            <select name="filtros">
+            <select name="filtros" id="filtros">
                 <option value="viajesTodos">Viajes</option>
 
-                <option value="viajeNoRealizados">Viajes No Realizados</option>
+                <option value="viajesNoRealizados">Viajes No Realizados</option>
             
-                <option value="viajeRealizados">Viajes Realizados</option>
+                <option value="viajesRealizados">Viajes Realizados</option>
 
               
 
@@ -57,5 +57,6 @@
             <button  class="btn btn-light"> <a id="anchor" href="agregarViaje"> Agregar Viaje </a> </button> 
         </div>
       <script type="text/javascript" src="js/infoViajesNoRealizados.js"></script>
+      <script src="js/altaVuelo.js"></script>
 </body>
 </html>
