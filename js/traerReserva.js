@@ -7,15 +7,16 @@ function load() {
   } else {
     console.log("no guardo los datos");
   }
-  traerReserva();
+  traerReserva(id);
   let actualizar = document.querySelector("#btn1");
   actualizar.addEventListener("click", cargarHotel);
 }
 
 let reservas;
 
-function traerReserva() {
-  fetch("api/alojamientos")
+function traerReserva(id) {
+  let url = "api/alojamientos/" + id;
+  fetch(url)
     .then(function (r) {
       return r.json();
     })

@@ -4,6 +4,7 @@ function load() {
   traerReserva();
   let actualizar = document.querySelector(".act");
   actualizar.addEventListener("click", mostrarDatosViajeNR());
+  document.querySelector("#filtros").addEventListener("change", filtrar);
 }
 
 let objetos = [];
@@ -27,7 +28,7 @@ let objetoFiltro = [];
 
 const filtroDefault = { option: "viajesTodos", value: "Viajes" };
 
-document.querySelector("#filtros").addEventListener("change", filtrar);
+//document.querySelector("#filtros").addEventListener("change", filtrar);
 
 function filtrar() {
   objetoFiltro = [];

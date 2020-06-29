@@ -12,20 +12,28 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <script
+    src="https://kit.fontawesome.com/22bea3a94b.js"
+    crossorigin="anonymous"
+  ></script>
   </head>
 
   <body>
     <div class="body-Detalle">
       <div id="container-title" data-objectid="idViaje">
-        <button class="btn btn-light">
-          <a id="anchor" href="./viajes"> Volver </a>
-        </button>
-        <h1 id="titulo"></h1>
+        <div class="botonBackV">
+          <a class="back" href="./viajes"
+            ><i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+        <div class="nombreVuelo">
+          <h1 id="titulo1"></h1>
+        </div>
       </div>
       <div class="card">
         <div class="card-body">
           <h5 class="card-title" class="hotel">Detalles</h5>
-          <p>Fecha comienzo: <p id="comienzo"></p> </p>
+          <p>Fecha comienzo: <br id="comienzo"></br> </p>
           <p>Fecha finalizacion: <p id="fin"></p></p>
           <p>Destino: <p id="destino"></p></p>
           <p>algo-mas: <p id="descripcion"></p></p>
@@ -59,10 +67,10 @@
 
       <div class="buttons">
         <button class="btn btn-light">
-          <a id="anchor" href="./"> Agregar vuelo </a>
+          <a id="anchor" href="./agregarVuelo"> Agregar vuelo </a>
         </button>
         <button class="btn btn-light">
-          <a id="anchor" href="./"> Agregar Alojamiento </a>
+          <a id="anchor" href="./agregarHotel"> Agregar Alojamiento </a>
         </button>
       </div>
     </div>

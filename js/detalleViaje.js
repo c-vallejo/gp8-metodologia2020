@@ -66,7 +66,7 @@ function traerHotel(id) {
 }
 
 function mostrarDetallesViaje(objeto) {
-  let titulo = document.querySelector("#titulo");
+  let titulo = document.querySelector("#titulo1");
   titulo.innerHTML = " ";
   let comienzo = document.querySelector("#comienzo");
   comienzo.innerHTML = " ";

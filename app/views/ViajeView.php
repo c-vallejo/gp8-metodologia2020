@@ -5,6 +5,7 @@ class ViajeView {
     private $formularioCargar;
     private $detalle;
     private $vuelo;
+    private $formularioVuelo;
 
     public function __construct() {
 
@@ -13,6 +14,7 @@ class ViajeView {
         $this->formularioCargar = 'html/cargarViaje.html';
         $this->detalle = 'html/detalleViaje.html';
         $this->vuelo = 'html/InfodeVuelo.html';
+        $this->formularioVuelo = 'html/formAltaVuelo.html';
     }
 
     public function mostrarTemplate($template) {
@@ -36,5 +38,8 @@ class ViajeView {
     }
     public function detalleVuelo(){
         $this->mostrarTemplate($this->vuelo);
+    }
+    public function displayCargarVuelo() {
+        $this->mostrarTemplate($this->formularioVuelo);
     }
 }

@@ -21,4 +21,7 @@ class ViajesController extends Controller{
     public function detalleVuelo() {
         $this->view->detalleVuelo();
     }
+    public function displayCargarVuelo() {
+        $this->view->displayCargarVuelo();
+    }
 }
