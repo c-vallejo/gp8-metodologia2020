@@ -75,12 +75,12 @@ class bdModel extends PDO{
     }
 //Funcion GET. trae los vuelos por una Id de vuelo
     public function getVueloId($id){
-
         $sentencia = $this->db->prepare("SELECT * from vuelo  WHERE id_vuelo = ?");
         $sentencia->execute(array($id));
         $vuelo = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $vuelo;
     }
+    
 //Funcion POST. carga datos de un vuelo en la base de datos
     public function insertarVuelo($id_viaje, $salida, $fecha_salida,$hora_salida,$llegada, $fecha_llegada,$hora_llegada, $duracion_vuelo,$cod_salida,$cod_llegada,$cod_reserva,$huella_carbono,$aerolinea,$cod_vuelo,$tipo_avion,$cant_pasajeros,$notas){
         
