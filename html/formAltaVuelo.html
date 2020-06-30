@@ -36,12 +36,12 @@
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="">Código de reserva</label>
-                                <input type="text" class="form-control" placeholder="XDGUIT">
+                                <input id="codigoReserva" type="text" class="form-control" placeholder="XDGUIT">
                             </div>  
     
                             <div class="form-group col-md-4"> 
                                 <label for="">Cantidad de pasajeros de la reserva</label>
-                                <select class="custom-select">
+                                <select id="cantPasajeros" class="custom-select">
                                     <option selected value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -58,12 +58,12 @@
                         <div class="form-row">
                             <div class="form-group col-md-8"> 
                                 <label for="">Compañía aérea</label>
-                                <input type="text" class="form-control" placeholder="Aerolíneas Argentinas">
+                                <input id="compania" type="text" class="form-control" placeholder="Aerolíneas Argentinas">
                             </div>
                             
                             <div class="form-group col-md-4">
                                 <label for="">Información de la aeronave</label>
-                                <select class="custom-select">
+                                <select id="infoAeronave" class="custom-select">
                                     <option selected value="0">Seleccione avión</option>
                                     <option value="1">Boeing B737</option>
                                     <option value="2">Boeing B747</option>
@@ -84,7 +84,7 @@
 
                         <div class="form-group">
                             <label for="">Número de vuelo</label>
-                            <input type="number" class="form-control" placeholder="1234">
+                            <input id="nroVuelo" type="number" class="form-control" placeholder="1234">
                         </div> 
                         
                         <!-- Inicio contenedor de datos de salida y llegada de vuelos -->
@@ -97,16 +97,16 @@
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <label for="">Lugar</label>
-                                            <input type="text" class="form-control" placeholder="Buenos Aires / Argentina">
+                                            <input id="lugarSalida" type="text" class="form-control" placeholder="Buenos Aires / Argentina">
                                             <small class="form-text text-muted">Ciudad / País</small>
                                         </li>
                                         <li class="list-group-item">
                                             <label for="">Fecha y hora</label>
-                                            <input type="datetime-local" class="form-control">
+                                            <input id="dataSalida" type="datetime-local" class="form-control">
                                         </li>
                                         <li class="list-group-item">
                                             <label for="">Código aeropuerto</label>
-                                            <input type="text" class="form-control" placeholder="EZE">
+                                            <input id="codSalida" type="text" class="form-control" placeholder="EZE">
                                         </li>
                                     </ul>
                                 </div>
@@ -120,16 +120,16 @@
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <label for="">Lugar</label>
-                                            <input type="text" class="form-control" placeholder="Madrid / España">
+                                            <input id="lugarLlegada" type="text" class="form-control" placeholder="Madrid / España">
                                             <small class="form-text text-muted">Ciudad / País</small>
                                         </li>
                                         <li class="list-group-item">
                                             <label for="">Fecha y hora</label>
-                                            <input type="datetime-local" class="form-control">
+                                            <input id="dataLlegada" type= "datetime-local" class="form-control">
                                         </li>
                                         <li class="list-group-item">
                                             <label for="">Código aeropuerto</label>
-                                            <input type="text" class="form-control" placeholder="MAD">
+                                            <input id="codLlegada" type="text" class="form-control" placeholder="MAD">
                                         </li>
                                     </ul>
                                 </div>
@@ -140,16 +140,16 @@
                         <!-- Datos de impacto del vuelo-->
                         <div class="form-group">
                             <label for="">Duración del vuelo</label>
-                            <input class="form-control" type="text" placeholder="Duración de vuelo autocalculada" readonly>
+                            <input id="duracion" class="form-control" type="text" placeholder="Duración de vuelo autocalculada" readonly>
                         </div> 
 
                         <div class="form-group">
                             <label for="">Huella de carbono</label>
-                            <input class="form-control" type="text" placeholder="0.97t de CO2" readonly>
+                            <input id="huella" class="form-control" type="text" placeholder="0.97t de CO2" readonly>
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Notas acerca del vuelo"></textarea>
+                            <textarea id="notas" class="form-control" placeholder="Notas acerca del vuelo"></textarea>
                         </div>
                         
                         <div class="btn-group formButtons" role="group" aria-label="Button group with nested dropdown">
