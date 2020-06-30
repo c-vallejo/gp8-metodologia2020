@@ -24,6 +24,7 @@
     $router->addRoute("insertar_alojamiento", "POST", "bdApiController", "insertarAlojamiento");
     $router->addRoute("vuelos/:ID", "GET", "bdApiController", "getVuelos");
     $router->addRoute("vuelo/:ID", "GET", "bdApiController", "getVueloId");
+    $router->addRoute("vuelosAdd", "POST", "bdApiController", "insertarVuelo"); // probando
 
     //run
     $router->route($resource, $method); 
