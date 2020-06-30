@@ -1,15 +1,16 @@
 ("use strict");
 document.addEventListener("DOMContentLoaded", load);
 function load() {
-  traerReserva();
+  traerViajes();
   let actualizar = document.querySelector(".act");
-  actualizar.addEventListener("click", mostrarDatosViajeNR());
-  document.querySelector("#filtros").addEventListener("change", filtrar);
+  actualizar.addEventListener("click", () => {
+    mostrarDatosViajeNR(objetos);
+  });
 }
 
 let objetos = [];
 
-function traerReserva() {
+function traerViajes() {
   fetch("api/viajes")
     .then(function (r) {
       return r.json();
@@ -17,7 +18,7 @@ function traerReserva() {
     .then(function (json) {
       console.log(json);
       objetos = json;
-      mostrarDatosViajeNR();
+      mostrarDatosViajeNR(objetos);
     })
     .catch(function (e) {
       console.log(e);
@@ -28,7 +29,7 @@ let objetoFiltro = [];
 
 const filtroDefault = { option: "viajesTodos", value: "Viajes" };
 
-//document.querySelector("#filtros").addEventListener("change", filtrar);
+document.querySelector("#filtros").addEventListener("change", filtrar);
 
 function filtrar() {
   objetoFiltro = [];
@@ -63,11 +64,11 @@ function filtrar() {
   mostrarDatosViajeNR(objetoFiltro);
 }
 
-function mostrarDatosViajeNR() {
-  console.log(objetos);
+function mostrarDatosViajeNR(obj) {
+  console.log(obj);
   let vuelo = document.querySelector(".listaVuelosNR");
   vuelo.innerHTML = " ";
-  for (let objeto of objetos) {
+  for (let objeto of obj) {
     let newDiv = document.createElement("div");
     newDiv.className += "vueloNR";
 
