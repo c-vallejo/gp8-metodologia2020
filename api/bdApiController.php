@@ -52,12 +52,8 @@ class bdApiController {
         
         $id = $this->model->insertarViaje($data->titulo, $data->destino, $data->fecha_inicio,
         $data->fecha_fin, $data->descripcion);
-        $viajes = $this->model->get($id);
-    
-        if ($viajes)
-            $this->view->response($viajes, 200);
-        else
-            $this->view->response("El Viaje no fue creado", 500);
+        $this->view->response($id, 200);
+        
     }
 
     public function finalizarViaje($params = null){
@@ -79,11 +75,8 @@ class bdApiController {
         $data->fecha_inicio, $data->fecha_fin,$data->descripcion, $data->contacto,$data->cod_confirmacion,
         $data->checkin,$data->checkout,$data->cant_noches,$data->cant_habitacion,$data->cant_pasajeros);
         
-        $alojamiento = $this->model->get($id);
-        if ($alojamiento)
-            $this->view->response($alojamiento, 200);
-        else
-            $this->view->response("El Alojamiento no fue creado", 500);
+            $this->view->response($id, 200);
+       
     }
 
     public function  getVuelos($params = null) {
@@ -108,11 +101,7 @@ class bdApiController {
         $data->cod_salida,$data->cod_llegada,$data->cod_reserva,$data->huella_carbono,$data->aerolinea,
         $data->cod_vuelo,$data->tipo_avion,$data->cant_pasajeros,$data->notas);
         
-        $vuelo = $this->model->getVueloId($id);
-        if ($vuelo)
-            $this->view->response($vuelo, 200);
-        else
-            $this->view->response("El vuelo no fue creado", 500);
+        $this->view->response($id, 200);
     }
 
 }

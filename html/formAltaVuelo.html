@@ -6,7 +6,6 @@
     <title>Template Informacion de Vuelo</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script type="text/javascript" src="./js/altaVuelo.js"> </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -29,28 +28,16 @@
                 </div>
             </header>
             <section class="datos container-md">
-                <form action="vuelo" method="POST">
+                <form>
                     <div class="container-md"> 
         
                         <!-- Inicio contenedor de datos propios de reserva -->
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="">Código de reserva</label>
-                                <input type="text" class="form-control" placeholder="XDGUIT">
+                                <input id="codigoReserva" type="text" class="form-control" placeholder="XDGUIT">
                             </div>  
-    
-                            <div class="form-group col-md-4"> 
-                                <label for="">Cantidad de pasajeros de la reserva</label>
-                                <select class="custom-select">
-                                    <option selected value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7 o más</option>
-                                </select>
-                            </div>
+
                         </div>
                         <!-- Fin contenedor de datos propios de reserva -->
                         
@@ -58,33 +45,14 @@
                         <div class="form-row">
                             <div class="form-group col-md-8"> 
                                 <label for="">Compañía aérea</label>
-                                <input type="text" class="form-control" placeholder="Aerolíneas Argentinas">
+                                <input id="compania" type="text" class="form-control" placeholder="Aerolíneas Argentinas">
                             </div>
-                            
-                            <div class="form-group col-md-4">
-                                <label for="">Información de la aeronave</label>
-                                <select class="custom-select">
-                                    <option selected value="0">Seleccione avión</option>
-                                    <option value="1">Boeing B737</option>
-                                    <option value="2">Boeing B747</option>
-                                    <option value="3">Airbus A220</option>
-                                    <option value="4">Airbus A320</option>
-                                    <option value="5">Airbus A330</option>
-                                    <option value="6">Airbus A340</option>
-                                    <option value="7">Airbus A350</option>
-                                    <option value="8">Embraer E175</option>
-                                    <option value="9">Embraer E190</option>
-                                    <option value="10">Boeing - Otros</option>
-                                    <option value="11">Airbus - Otros</option>
-                                    <option value="12">Embraer - Otros</option>
-                                </select>
-                            </div> 
                         </div>
                         <!-- Fin contenedor de datos de aerolínea y aeronave-->
 
                         <div class="form-group">
                             <label for="">Número de vuelo</label>
-                            <input type="number" class="form-control" placeholder="1234">
+                            <input id="nroVuelo" type="number" class="form-control" placeholder="1234">
                         </div> 
                         
                         <!-- Inicio contenedor de datos de salida y llegada de vuelos -->
@@ -96,17 +64,8 @@
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
-                                            <label for="">Lugar</label>
-                                            <input type="text" class="form-control" placeholder="Buenos Aires / Argentina">
-                                            <small class="form-text text-muted">Ciudad / País</small>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <label for="">Fecha y hora</label>
-                                            <input type="datetime-local" class="form-control">
-                                        </li>
-                                        <li class="list-group-item">
-                                            <label for="">Código aeropuerto</label>
-                                            <input type="text" class="form-control" placeholder="EZE">
+                                            <label for="">Fecha: </label>
+                                            <input id="fechaSalida" type="date" class="form-control">
                                         </li>
                                     </ul>
                                 </div>
@@ -120,16 +79,12 @@
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <label for="">Lugar</label>
-                                            <input type="text" class="form-control" placeholder="Madrid / España">
+                                            <input id="lugarLlegada" type="text" class="form-control" placeholder="Madrid / España">
                                             <small class="form-text text-muted">Ciudad / País</small>
                                         </li>
                                         <li class="list-group-item">
-                                            <label for="">Fecha y hora</label>
-                                            <input type="datetime-local" class="form-control">
-                                        </li>
-                                        <li class="list-group-item">
-                                            <label for="">Código aeropuerto</label>
-                                            <input type="text" class="form-control" placeholder="MAD">
+                                            <label for="">Fecha: </label>
+                                            <input id="fechaLlegada" type="date" class="form-control">
                                         </li>
                                     </ul>
                                 </div>
@@ -140,32 +95,22 @@
                         <!-- Datos de impacto del vuelo-->
                         <div class="form-group">
                             <label for="">Duración del vuelo</label>
-                            <input class="form-control" type="text" placeholder="Duración de vuelo autocalculada" readonly>
+                            <input id="duracion" class="form-control" type="text" placeholder="Duración de vuelo autocalculada" readonly>
                         </div> 
 
                         <div class="form-group">
                             <label for="">Huella de carbono</label>
-                            <input class="form-control" type="text" placeholder="0.97t de CO2" readonly>
+                            <input id="huella" class="form-control" type="text" placeholder="0.97t de CO2" readonly>
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Notas acerca del vuelo"></textarea>
+                            <textarea id="notas" class="form-control" placeholder="Notas acerca del vuelo"></textarea>
                         </div>
                         
                         <div class="btn-group formButtons" role="group" aria-label="Button group with nested dropdown">
                             <!-- <button type="button" id="volverAtras" class="btn btn-dark"> <a href="./"> Volver </a> </button> -->
-                            <button type="submit" id="submitFormAltaVuelo"  class="btn btn-dark"> Nuevo viaje </button>
+                         <button type="submit" id="submitFormAltaVuelo"  class="btn btn-dark"> Agregar </button>
                           
-                            <div class="btn-group" role="group">
-                              <button type="button" id="submitFormAltaVuelo" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Viaje
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item" href="#">Viaje 1</a>
-                                <a class="dropdown-item" href="#">Viaje 2</a>
-                                <a class="dropdown-item" href="#">Viaje 3</a>
-                              </div>
-                            </div>
                           </div>
                     </div>
                 </div>
@@ -173,5 +118,6 @@
             </section>
         </section>
     </main>
+    <script type="text/javascript" src="./js/altaVuelo.js"> </script>
 </body>
 </html>

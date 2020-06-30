@@ -3,7 +3,7 @@ require_once("Router.php");
 require_once("app/controllers/HotelController.php");
 require_once("app/controllers/ViajeController.php");
 
-define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
+define("BASE", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/viajes');
 
 // recurso solicitado
 $action = $_GET["action"];

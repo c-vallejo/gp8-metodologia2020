@@ -1,11 +1,16 @@
 "use strict";
 
+//agrega el evento submit
+document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("submit", cargarAlojamiento);
+});
+
 // carga el formulario a la BD
 function cargarAlojamiento(e) {
   e.preventDefault();
-
+  let  id = localStorage.getItem("id");
   //toma los datos de los campos del formulario
-  let id_viaje = 1;
+  let id_viaje = id;
   let nombre = document.querySelector("#inputNombreReserva").value;
   let ciudad = document.querySelector("#inputCiudadDestino").value;
   let fechaInicio = document.querySelector("#fechaInicio").value;
@@ -59,6 +64,8 @@ function cargarAlojamiento(e) {
         if (!response.ok) {
           console.log("error");
         } else {
+          let url = "./detalleViaje";
+          location.replace(url);
           return response.json();
         }
       })
@@ -68,9 +75,4 @@ function cargarAlojamiento(e) {
   }
 }
 
-//agrega el evento submit
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .querySelector("#form_alta")
-    .addEventListener("submit", cargarAlojamiento);
-});
+
