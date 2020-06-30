@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", load);
 ("use strict");
 function load() {
-  document.querySelector("#form_alta").addEventListener("submit", cargarViaje);
+  document.querySelector("#form_alta").addEventListener("submit", verificarFormulario);
   // carga el formulario a la BD
-  function cargarViaje(e) {
+
+  function verificarFormulario(e){
     e.preventDefault();
 
     //toma los datos de los campos del formulario
@@ -13,24 +14,31 @@ function load() {
     let fechaFinalizacion = document.querySelector("#fechaFinalizacion").value;
     let InputDescripcion = document.querySelector("#InputDescripcion").value;
 
-    //verifica que los compos nombre, ciudad, fecha inicio y fecha fin esten completos
+    //verifica que los campos nombre, ciudad, fecha inicio y fecha fin esten completos
     if (
       nombre != "" &&
       ciudad != "" &&
       fechaInicio != "" &&
       fechaFinalizacion != ""
     ) {
-      //carga los datos para ser enviads via API
+      //carga los datos para ser enviados via API y se lo pasa a dicha funcion.
       let data = {
         titulo: nombre,
         destino: ciudad,
         fecha_inicio: fechaInicio,
         fecha_fin: fechaFinalizacion,
         descripcion: InputDescripcion,
-      };
-      console.log(data);
-      let url = "api/viajes";
+      }
+      cargarViaje(data);
+    }else {
+        alert("Por favor complete los campos obligatorios");
+      }
+  }
 
+  function cargarViaje(data) {
+    
+      let url = "api/viajes";
+      console.log(data);
       //envia los datos a la API
       fetch(url, {
         method: "POST",
@@ -42,12 +50,10 @@ function load() {
             console.log(response);
             console.log("error");
           } else {
+            location.replace("./viajes");
             return response.json();
           }
         })
         .catch((error) => console.log(error));
-    } else {
-      alert("Por favor complete los campos obligatorios");
-    }
+    } 
   }
-}
