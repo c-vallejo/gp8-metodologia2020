@@ -90,6 +90,7 @@ class bdModel extends PDO{
        
        $sentencia->execute(array($id_viaje, $salida, $fecha_salida,$hora_salida,$llegada, $fecha_llegada,$hora_llegada, 
         $duracion_vuelo,$cod_salida,$cod_llegada,$cod_reserva,$huella_carbono,$aerolinea,$cod_vuelo,$tipo_avion,$cant_pasajeros,$notas));
+        
     }
 
 }
