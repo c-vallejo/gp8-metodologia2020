@@ -60,12 +60,7 @@ class bdApiController {
 
         $id = $params[':ID'];
         $this->model->finalizarViaje($id);
-        
-        $viajes = $this->model->get($id);
-        if ($viajes)
-            $this->view->response($viajes, 200);
-        else
-            $this->view->response("El Viaje no fue actualizado", 500);
+
     }
 
     public function insertarAlojamiento($params = null) {

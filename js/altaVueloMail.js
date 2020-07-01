@@ -5,13 +5,14 @@ function load() {
     .querySelector("#botonActualizar")
     .addEventListener("click", cargarVuelo);
 }
+let alerta;
 // carga el formulario a la BD
 function cargarVuelo(e) {
   e.preventDefault();
 
   let datosPrecargados = [
     {
-      id_viaje: "1",
+      id_viaje: "3",
       salida: "Buenos Aires",
       fecha_salida: "2020/02/25",
       hora_salida: "20:20",
@@ -49,7 +50,7 @@ function cargarVuelo(e) {
       notas: "Peso maximo de las valijas: 60Kg ",
     },
     {
-      id_viaje: "67",
+      id_viaje: "2",
       salida: "Buenos Aires",
       fecha_salida: "2022/08/14",
       hora_salida: "21:20",
@@ -72,11 +73,14 @@ function cargarVuelo(e) {
   let indice = Math.floor(Math.random() * 3);
   console.log(indice);
   let data = datosPrecargados[indice];
-  let alerta;
+
   if (indice === 1 || indice === 2) {
-     alerta = ("Un viaje fue encontrado con la fecha del vuelo enviado por email. Se asingara al mismo.");
+    alerta =
+      "Un viaje fue encontrado con la fecha del vuelo enviado por email. Se asingara al mismo.";
+    cargarnuevovuelo(data);
   } else {
-     alerta = ("Se creo un viaje debido a que no hay existentes con la fecha del vuelo enviado por email.");
+    alerta =
+      "Se creo un viaje debido a que no hay existentes con la fecha del vuelo enviado por email.";
     let data1 = {
       titulo: "Viaje autogenerado",
       destino: data.llegada,
@@ -84,33 +88,38 @@ function cargarVuelo(e) {
       fecha_fin: data.fecha_fin,
       descripcion: "Viaje creado automaticamente por cargar un vuelo por Mail",
     };
-    
-    console.log(data1);
-    let url = "api/viajes";
-
-    //envia los datos a la API
-    fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data1),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          console.log(response);
-          console.log("error");
-        } else {
-          return response.json();
-        }
-      })
-      .catch((error) => console.log(error));
+    cargarviaje(data1);
+    setTimeout(cargarnuevovuelo(data), 1500);
   }
 
-  //let data =  datosPrecargados[indice];
+  alert(alerta);
+  location.replace("./viajes");
+}
 
+function cargarviaje(data1) {
+  console.log(data1);
+  let url = "api/viajes";
+
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data1),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        console.log(response);
+        console.log("error");
+      } else {
+        return response.json();
+      }
+    })
+    .catch((error) => console.log(error));
+}
+
+function cargarnuevovuelo(data) {
   console.log(data);
   let url = "api/vuelosAdd";
 
-  //envia los datos a la API
   fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -125,7 +134,4 @@ function cargarVuelo(e) {
       }
     })
     .catch((error) => console.log(error));
-
-    location.replace("./viajes");
-    alert(alerta);
 }
